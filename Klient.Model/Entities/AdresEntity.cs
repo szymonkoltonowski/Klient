@@ -11,9 +11,13 @@ namespace Klient.Model.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public Guid Id { get; set; }
+        [Required]
         public string Ulica { get; set; }
+        [Required]
         public string Miasto { get; set; }
+        [Required]
         public string NrDomu { get; set; }
+        [Required]
         public string NrMieszkania { get; set; }
 
         public ICollection<KlientEntity> Klient { get; set; }
