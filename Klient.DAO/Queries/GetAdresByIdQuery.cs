@@ -1,17 +1,19 @@
 ﻿using Klient.Model.Entities;
 using MediatR;
 using System;
-
+using System.Collections.Generic;
+using System.Text;
 
 namespace Klient.DAO.Queries
 {
-    public class GetKlientByIdQuery : IRequest<KlientEntity>
+    public class GetAdresByIdQuery : IRequest<AdresEntity>
     {
         public Guid _id;
 
-        public GetKlientByIdQuery(Guid id)
+        public GetAdresByIdQuery(Guid id)
         {
             _id = id;
         }
+
     }
 }
