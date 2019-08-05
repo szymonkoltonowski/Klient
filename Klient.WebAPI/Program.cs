@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Serilog.Events;
 
 namespace Klient.WebAPI
 {
@@ -10,7 +11,9 @@ namespace Klient.WebAPI
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                            .MinimumLevel.Verbose()
+                            .MinimumLevel.Debug()
+                            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                            .Enrich.FromLogContext()
                             .WriteTo.Console()
                             .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
                             .CreateLogger();
@@ -27,12 +30,8 @@ namespace Klient.WebAPI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .ConfigureLogging(logging =>
-                {
-                    logging.ClearProviders();
-                    logging.AddConsole();
-                });
+                .UseStartup<Startup>()                
+                .UseSerilog();
 
     }
 }

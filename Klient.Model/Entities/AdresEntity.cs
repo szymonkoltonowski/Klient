@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,7 +17,6 @@ namespace Klient.Model.Entities
         public string Miasto { get; set; }
         [Required]
         public string NrDomu { get; set; }
-        [Required]
         public string NrMieszkania { get; set; }
 
         public ICollection<KlientEntity> Klient { get; set; }

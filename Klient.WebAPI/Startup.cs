@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
-using Autofac;
+using Klient.WebAPI.Diagnostics;
 
 namespace Klient.WebAPI
 {
@@ -43,18 +43,18 @@ namespace Klient.WebAPI
 
 
         }
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            builder
-                .RegisterAssemblyTypes(typeof(IRequest<>).Assembly)
-                .Where(t => t.IsClosedTypeOf(typeof(IRequest<>)))
-                .AsImplementedInterfaces();
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
+        //    builder
+        //        .RegisterAssemblyTypes(typeof(IRequest<>).Assembly)
+        //        .Where(t => t.IsClosedTypeOf(typeof(IRequest<>)))
+        //        .AsImplementedInterfaces();
 
-            builder
-                .RegisterAssemblyTypes(typeof(IRequestHandler<>).Assembly)
-                .Where(t => t.IsClosedTypeOf(typeof(IRequestHandler<,>)))
-                .AsImplementedInterfaces();
-        }
+        //    builder
+        //        .RegisterAssemblyTypes(typeof(IRequestHandler<>).Assembly)
+        //        .Where(t => t.IsClosedTypeOf(typeof(IRequestHandler<,>)))
+        //        .AsImplementedInterfaces();
+        //}
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -70,7 +70,7 @@ namespace Klient.WebAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
-
+            app.UseMiddleware<SerilogMiddleware>();
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {

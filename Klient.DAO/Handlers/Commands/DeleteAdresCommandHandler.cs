@@ -19,7 +19,7 @@ namespace Klient.DAO.Handlers.Commands
 
         public async Task<Unit> Handle(DeleteAdresCommand request, CancellationToken cancellationToken)
         {
-            var adresEntity = await _dataContext.Klient.FirstOrDefaultAsync(adres => adres.Id == request.Id, cancellationToken);
+            var adresEntity = await _dataContext.Adres.FirstOrDefaultAsync(adres => adres.Id == request.Id, cancellationToken);
 
             if (adresEntity == null)
             {
@@ -27,7 +27,7 @@ namespace Klient.DAO.Handlers.Commands
                 throw new Exception("Nie znaleziono encji");
             }
 
-            _dataContext.Klient.Remove(adresEntity);
+            _dataContext.Adres.Remove(adresEntity);
 
             await _dataContext.SaveChangesAsync(cancellationToken);
 

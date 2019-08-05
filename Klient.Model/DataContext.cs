@@ -22,30 +22,13 @@ namespace Klient.Model
                 .HasOne<AdresEntity>(s => s.Adres)
                 .WithMany(g => g.Klient)
                 .HasForeignKey(s => s.AdresId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
+                
+
             modelBuilder.ApplyConfiguration(new KlientEntityConfiguration());
             modelBuilder.ApplyConfiguration(new AdresEntityConfiguration());
 
-
-            //var AdresSeed = new AdresEntity()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Miasto = "Toruń",
-            //    NrDomu = "22",
-            //    NrMieszkania = "1",
-            //    Ulica = "Biała",
-            //};
-            //var KlientSeed = new KlientEntity()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Pesel = "95232125123",
-            //    Imie = "Szymek",
-            //    Nazwisko = "Kolt",
-            //    AdresId = AdresSeed.Id
-            //};
- 
-            //modelBuilder.Entity<AdresEntity>().HasData(AdresSeed);
-            //modelBuilder.Entity<KlientEntity>().HasData(KlientSeed);
 
             base.OnModelCreating(modelBuilder);
 
