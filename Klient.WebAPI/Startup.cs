@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
 using Klient.WebAPI.Diagnostics;
+using Autofac;
 
 namespace Klient.WebAPI
 {
@@ -41,21 +42,7 @@ namespace Klient.WebAPI
             });
             services.AddMediatR(Assembly.Load("Klient.DAO"));
 
-
         }
-        //public void ConfigureContainer(ContainerBuilder builder)
-        //{
-        //    builder
-        //        .RegisterAssemblyTypes(typeof(IRequest<>).Assembly)
-        //        .Where(t => t.IsClosedTypeOf(typeof(IRequest<>)))
-        //        .AsImplementedInterfaces();
-
-        //    builder
-        //        .RegisterAssemblyTypes(typeof(IRequestHandler<>).Assembly)
-        //        .Where(t => t.IsClosedTypeOf(typeof(IRequestHandler<,>)))
-        //        .AsImplementedInterfaces();
-        //}
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

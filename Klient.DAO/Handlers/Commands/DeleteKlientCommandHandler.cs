@@ -1,4 +1,5 @@
-﻿using Klient.DAO.Commands;
+﻿using Klient.Core.Exceptions;
+using Klient.DAO.Commands;
 using Klient.Model;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,8 +26,7 @@ namespace Klient.DAO.Handlers.Commands
 
             if (klientEntity == null)
             {
-                //    throw new EntityNotFoundException();
-                throw new Exception("Nie znaleziono encji");
+                throw new EntityNotFoundException(request.Id);
             }
 
             _dataContext.Klient.Remove(klientEntity);

@@ -15,6 +15,6 @@ namespace Klient.WebAPI.Models
 
         public string Nazwisko { get; set; }
 
-        public Guid? AdresId { get; set; }
+        public Guid AdresId { get; set; }
     }
 }

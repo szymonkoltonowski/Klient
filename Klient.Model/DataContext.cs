@@ -22,8 +22,8 @@ namespace Klient.Model
                 .HasOne<AdresEntity>(s => s.Adres)
                 .WithMany(g => g.Klient)
                 .HasForeignKey(s => s.AdresId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();
+                .OnDelete(DeleteBehavior.Cascade);
+                
                 
 
             modelBuilder.ApplyConfiguration(new KlientEntityConfiguration());

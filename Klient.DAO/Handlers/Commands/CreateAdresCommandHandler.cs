@@ -2,6 +2,7 @@
 using Klient.Model;
 using Klient.Model.Entities;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -28,7 +29,7 @@ namespace Klient.DAO.Handlers.Commands
 
             };
 
-            _dataContext.Adres.Add(adresEntity);
+                _dataContext.Adres.Add(adresEntity);            
 
             await _dataContext.SaveChangesAsync(cancellationToken);
 

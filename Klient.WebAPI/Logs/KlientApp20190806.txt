@@ -1,0 +1,517 @@
+2019-08-06 19:11:24.633 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 19:11:25.179 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 19:11:25.195 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 19:11:25.344 +02:00 [INF] HTTP GET /index.html responded 200 in 123.4543 ms
+2019-08-06 19:11:25.351 +02:00 [INF] Request finished in 173.0032ms 200 text/html
+2019-08-06 19:11:25.454 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 19:11:25.527 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 71.9719 ms
+2019-08-06 19:11:25.527 +02:00 [INF] Request finished in 72.4018ms 200 application/json;charset=utf-8
+2019-08-06 19:11:32.150 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 19:11:32.153 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 19:11:32.170 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 19:11:32.176 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 3.4053ms
+2019-08-06 19:11:32.176 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 19:11:32.176 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'MediatR.IMediator' while attempting to activate 'Klient.WebAPI.Controllers.AdresController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 19:11:32.228 +02:00 [INF] Request finished in 78.2237ms 500 text/html; charset=utf-8
+2019-08-06 19:11:40.351 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 19:11:40.352 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 19:11:40.355 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 19:11:40.355 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 0.67980000000000007ms
+2019-08-06 19:11:40.355 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 19:11:40.356 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'MediatR.IMediator' while attempting to activate 'Klient.WebAPI.Controllers.KlientController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 19:11:40.359 +02:00 [INF] Request finished in 7.9354ms 500 text/html; charset=utf-8
+2019-08-06 20:08:35.663 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:08:35.973 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:08:35.980 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:08:36.089 +02:00 [INF] HTTP GET /index.html responded 200 in 83.6793 ms
+2019-08-06 20:08:36.095 +02:00 [INF] Request finished in 123.8989ms 200 text/html
+2019-08-06 20:08:36.192 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:08:36.265 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 73.1183 ms
+2019-08-06 20:08:36.265 +02:00 [INF] Request finished in 73.5344ms 200 application/json;charset=utf-8
+2019-08-06 20:08:49.979 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:08:50.286 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:08:50.293 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:08:50.400 +02:00 [INF] HTTP GET /index.html responded 200 in 81.4487 ms
+2019-08-06 20:08:50.405 +02:00 [INF] Request finished in 120.5094ms 200 text/html
+2019-08-06 20:08:50.491 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:08:50.561 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 69.2011 ms
+2019-08-06 20:08:50.561 +02:00 [INF] Request finished in 69.4691ms 200 application/json;charset=utf-8
+2019-08-06 20:09:41.518 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:2036/api/Adres application/json-patch+json 82
+2019-08-06 20:09:41.527 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.CreateAdres (Klient.WebAPI)'
+2019-08-06 20:09:41.545 +02:00 [INF] Route matched with {action = "CreateAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAdres(Klient.WebAPI.Models.CreateAdresModel) on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:09:41.566 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.CreateAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:09:41.857 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:09:42.017 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Adres] ([Id], [Miasto], [NrDomu], [NrMieszkania], [Ulica])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2019-08-06 20:09:42.030 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.CreateAdres (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 461.9728ms.
+2019-08-06 20:09:42.037 +02:00 [INF] Executing ObjectResult, writing value of type 'MediatR.Unit'.
+2019-08-06 20:09:42.042 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.CreateAdres (Klient.WebAPI) in 495.3901ms
+2019-08-06 20:09:42.043 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.CreateAdres (Klient.WebAPI)'
+2019-08-06 20:09:42.044 +02:00 [INF] Request finished in 526.1981ms 200 application/json; charset=utf-8
+2019-08-06 20:09:53.410 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 20:09:53.411 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:09:53.414 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:09:53.414 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:09:53.429 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:09:53.489 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-06 20:09:53.560 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Klient.Model.DataContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2019-08-06 20:09:53.619 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 205.3827ms
+2019-08-06 20:09:53.620 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:09:53.620 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Klient.DAO.Handlers.Queries.GetAdresQueryHandler.Handle(GetAdresQuery request, CancellationToken cancellationToken) in C:\Users\Szymon\Source\Repos\Klient\Klient.DAO\Handlers\Queries\GetAdresQueryHandler.cs:line 23
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Klient.WebAPI.Controllers.AdresController.GetAdres() in C:\Users\Szymon\Source\Repos\Klient\Klient.WebAPI\Controllers\AdresController.cs:line 27
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 20:09:53.666 +02:00 [INF] Request finished in 255.209ms 500 text/html; charset=utf-8
+2019-08-06 20:10:22.461 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 20:10:22.461 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:10:22.466 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:10:22.466 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:10:22.468 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:10:22.475 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 20:10:22.483 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Klient.Model.DataContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2019-08-06 20:10:22.539 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 73.412500000000009ms
+2019-08-06 20:10:22.539 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:10:22.540 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Klient.DAO.Handlers.Queries.GetKlienciQueryHandler.Handle(GetKlienciQuery request, CancellationToken cancellationToken) in C:\Users\Szymon\Source\Repos\Klient\Klient.DAO\Handlers\Queries\GetKlienciQueryHandler.cs:line 25
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Klient.WebAPI.Controllers.KlientController.GetKlienci() in C:\Users\Szymon\Source\Repos\Klient\Klient.WebAPI\Controllers\KlientController.cs:line 28
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 20:10:22.560 +02:00 [INF] Request finished in 98.7904ms 500 text/html; charset=utf-8
+2019-08-06 20:13:12.269 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:13:12.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:13:12.566 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:13:12.674 +02:00 [INF] HTTP GET /index.html responded 200 in 83.6551 ms
+2019-08-06 20:13:12.679 +02:00 [INF] Request finished in 122.4669ms 200 text/html
+2019-08-06 20:13:12.765 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:13:12.834 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 68.9436 ms
+2019-08-06 20:13:12.835 +02:00 [INF] Request finished in 69.2438ms 200 application/json;charset=utf-8
+2019-08-06 20:14:27.859 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 20:14:27.866 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:14:27.877 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:14:27.883 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:14:28.102 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:14:28.253 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-06 20:14:28.321 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Klient.Model.DataContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2019-08-06 20:14:28.393 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 513.708ms
+2019-08-06 20:14:28.394 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:14:28.395 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Klient.DAO.Handlers.Queries.GetAdresQueryHandler.Handle(GetAdresQuery request, CancellationToken cancellationToken) in C:\Users\Szymon\Source\Repos\Klient\Klient.DAO\Handlers\Queries\GetAdresQueryHandler.cs:line 23
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Klient.WebAPI.Controllers.AdresController.GetAdres() in C:\Users\Szymon\Source\Repos\Klient\Klient.WebAPI\Controllers\AdresController.cs:line 27
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 20:14:28.425 +02:00 [INF] Request finished in 565.3373ms 500 text/html; charset=utf-8
+2019-08-06 20:20:33.562 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:20:33.865 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:20:33.873 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:20:33.984 +02:00 [INF] HTTP GET /index.html responded 200 in 84.9281 ms
+2019-08-06 20:20:33.990 +02:00 [INF] Request finished in 125.752ms 200 text/html
+2019-08-06 20:20:34.081 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:20:34.154 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 73.1947 ms
+2019-08-06 20:20:34.155 +02:00 [INF] Request finished in 73.485ms 200 application/json;charset=utf-8
+2019-08-06 20:20:38.437 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 20:20:38.439 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:20:38.451 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:20:38.457 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:20:38.683 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:20:38.802 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-06 20:20:38.840 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 379.5858ms.
+2019-08-06 20:20:38.847 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.AdresEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:20:38.854 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 400.98380000000003ms
+2019-08-06 20:20:38.855 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:20:38.856 +02:00 [INF] Request finished in 419.8124ms 200 application/json; charset=utf-8
+2019-08-06 20:20:45.112 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 20:20:45.113 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:20:45.115 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:20:45.115 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:20:45.118 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:20:45.127 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 20:20:45.169 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Klient.Model.DataContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2019-08-06 20:20:45.236 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 120.9418ms
+2019-08-06 20:20:45.236 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:20:45.237 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlTypes.SqlGuid.get_Value()
+   at System.Data.SqlClient.SqlDataReader.GetGuid(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Klient.DAO.Handlers.Queries.GetKlienciQueryHandler.Handle(GetKlienciQuery request, CancellationToken cancellationToken) in C:\Users\Szymon\Source\Repos\Klient\Klient.DAO\Handlers\Queries\GetKlienciQueryHandler.cs:line 25
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Klient.WebAPI.Controllers.KlientController.GetKlienci() in C:\Users\Szymon\Source\Repos\Klient\Klient.WebAPI\Controllers\KlientController.cs:line 28
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-06 20:20:45.270 +02:00 [INF] Request finished in 158.6358ms 500 text/html; charset=utf-8
+2019-08-06 20:22:44.999 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 20:22:44.999 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:22:45.002 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:22:45.002 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:22:45.005 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:22:45.012 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 20:22:45.019 +02:00 [DBG] Próba pobrania danych takich jak: [{"Id":"401e1832-436a-43dd-73a8-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"b65cc7d3-b6aa-4c80-73a9-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"9f98e515-6789-4134-73aa-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"163f3251-c82b-439f-1a93-08d719ddff5b","Pesel":"65987441365","Imie":"Szymo","Nazwisko":"NAzwisko","AdresId":"e24f2861-9edc-4f53-1bb1-08d719ddce38","Adres":null,"$type":"KlientEntity"},{"Id":"9f882bf5-446e-4407-90f5-cdc3dabe15f7","Pesel":"95232125123","Imie":"Szymek","Nazwisko":"Kolt","AdresId":"9b578c8c-8dd4-4fb7-a114-eecca9f4d5c4","Adres":null,"$type":"KlientEntity"}]
+2019-08-06 20:22:45.024 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.212200000000003ms.
+2019-08-06 20:22:45.024 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.KlientEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:22:45.026 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 24.5488ms
+2019-08-06 20:22:45.026 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:22:45.026 +02:00 [INF] Request finished in 27.0326ms 200 application/json; charset=utf-8
+2019-08-06 20:26:10.195 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:26:10.498 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:26:10.505 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:26:10.612 +02:00 [INF] HTTP GET /index.html responded 200 in 82.3315 ms
+2019-08-06 20:26:10.618 +02:00 [INF] Request finished in 120.3757ms 200 text/html
+2019-08-06 20:26:10.707 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:26:10.774 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 66.3789 ms
+2019-08-06 20:26:10.774 +02:00 [INF] Request finished in 66.6703ms 200 application/json;charset=utf-8
+2019-08-06 20:34:23.711 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 20:34:24.021 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 20:34:24.028 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 20:34:24.135 +02:00 [INF] HTTP GET /index.html responded 200 in 82.9321 ms
+2019-08-06 20:34:24.142 +02:00 [INF] Request finished in 122.2121ms 200 text/html
+2019-08-06 20:34:24.231 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 20:34:24.298 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 66.791 ms
+2019-08-06 20:34:24.298 +02:00 [INF] Request finished in 67.0563ms 200 application/json;charset=utf-8
+2019-08-06 20:34:27.933 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 20:34:27.936 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:34:27.948 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:34:27.955 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:34:28.179 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:34:28.305 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-06 20:34:28.345 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 388.2199ms.
+2019-08-06 20:34:28.352 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.AdresEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:34:28.360 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 409.7298ms
+2019-08-06 20:34:28.361 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:34:28.362 +02:00 [INF] Request finished in 429.1746ms 200 application/json; charset=utf-8
+2019-08-06 20:34:32.966 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 20:34:32.966 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:34:32.969 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:34:32.969 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:34:32.972 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:34:32.981 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 20:34:32.993 +02:00 [DBG] Próba pobrania danych takich jak: [{"Id":"401e1832-436a-43dd-73a8-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"b65cc7d3-b6aa-4c80-73a9-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"9f98e515-6789-4134-73aa-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"163f3251-c82b-439f-1a93-08d719ddff5b","Pesel":"65987441365","Imie":"Szymo","Nazwisko":"NAzwisko","AdresId":"e24f2861-9edc-4f53-1bb1-08d719ddce38","Adres":null,"$type":"KlientEntity"}]
+2019-08-06 20:34:32.998 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 28.753500000000003ms.
+2019-08-06 20:34:32.998 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.KlientEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:34:33.000 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 31.6388ms
+2019-08-06 20:34:33.001 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:34:33.001 +02:00 [INF] Request finished in 35.014ms 200 application/json; charset=utf-8
+2019-08-06 20:35:06.915 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:2036/api/Klient application/json-patch+json 71
+2019-08-06 20:35:06.915 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI)'
+2019-08-06 20:35:06.923 +02:00 [INF] Route matched with {action = "CreateKlient", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateKlient(Klient.WebAPI.Models.CreateKlientModel) on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:35:06.940 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:35:06.950 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:35:06.990 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Klient] ([Id], [AdresId], [Imie], [Nazwisko], [Pesel])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2019-08-06 20:35:07.003 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 62.6906ms.
+2019-08-06 20:35:07.003 +02:00 [INF] Executing ObjectResult, writing value of type 'MediatR.Unit'.
+2019-08-06 20:35:07.003 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI) in 79.8203ms
+2019-08-06 20:35:07.003 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI)'
+2019-08-06 20:35:07.003 +02:00 [INF] Request finished in 88.2825ms 200 application/json; charset=utf-8
+2019-08-06 20:35:14.834 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 20:35:14.834 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:35:14.835 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 20:35:14.835 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:35:14.835 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:35:14.836 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 20:35:14.837 +02:00 [DBG] Próba pobrania danych takich jak: [{"Id":"401e1832-436a-43dd-73a8-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"b65cc7d3-b6aa-4c80-73a9-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"9f98e515-6789-4134-73aa-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"163f3251-c82b-439f-1a93-08d719ddff5b","Pesel":"65987441365","Imie":"Szymo","Nazwisko":"NAzwisko","AdresId":"e24f2861-9edc-4f53-1bb1-08d719ddce38","Adres":null,"$type":"KlientEntity"},{"Id":"f2e8c867-527b-4cb9-bc2f-08d71a9cce00","Pesel":"65841236548","Imie":"Zuza","Nazwisko":"Zuza","AdresId":null,"Adres":null,"$type":"KlientEntity"}]
+2019-08-06 20:35:14.838 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.79ms.
+2019-08-06 20:35:14.838 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.KlientEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:35:14.838 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 3.1613ms
+2019-08-06 20:35:14.838 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 20:35:14.838 +02:00 [INF] Request finished in 3.6067ms 200 application/json; charset=utf-8
+2019-08-06 20:35:22.106 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-06 20:35:22.106 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:35:22.107 +02:00 [INF] Route matched with {action = "GetAdres", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAdres() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-06 20:35:22.107 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 20:35:22.107 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 20:35:22.108 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-06 20:35:22.111 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.1518000000000006ms.
+2019-08-06 20:35:22.111 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.AdresEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 20:35:22.111 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI) in 4.7408ms
+2019-08-06 20:35:22.111 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdres (Klient.WebAPI)'
+2019-08-06 20:35:22.111 +02:00 [INF] Request finished in 5.1096ms 200 application/json; charset=utf-8
+2019-08-06 21:06:46.914 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-06 21:06:47.245 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-06 21:06:47.254 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-06 21:06:47.362 +02:00 [INF] HTTP GET /index.html responded 200 in 82.6113 ms
+2019-08-06 21:06:47.368 +02:00 [INF] Request finished in 124.4901ms 200 text/html
+2019-08-06 21:06:47.460 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-06 21:06:47.528 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 67.8394 ms
+2019-08-06 21:06:47.528 +02:00 [INF] Request finished in 68.1331ms 200 application/json;charset=utf-8
+2019-08-06 21:07:29.539 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:2036/api/Klient application/json-patch+json 75
+2019-08-06 21:07:29.544 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI)'
+2019-08-06 21:07:29.563 +02:00 [INF] Route matched with {action = "CreateKlient", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateKlient(Klient.WebAPI.Models.CreateKlientModel) on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 21:07:29.585 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 21:07:29.810 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 21:07:29.932 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Klient] ([Id], [AdresId], [Imie], [Nazwisko], [Pesel])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2019-08-06 21:07:29.952 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 364.21750000000003ms.
+2019-08-06 21:07:29.958 +02:00 [INF] Executing ObjectResult, writing value of type 'MediatR.Unit'.
+2019-08-06 21:07:29.964 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI) in 399.0065ms
+2019-08-06 21:07:29.964 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.CreateKlient (Klient.WebAPI)'
+2019-08-06 21:07:29.966 +02:00 [INF] Request finished in 427.6368ms 200 application/json; charset=utf-8
+2019-08-06 21:07:42.586 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-06 21:07:42.587 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 21:07:42.590 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-06 21:07:42.590 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-06 21:07:42.606 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-06 21:07:42.671 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-06 21:07:42.694 +02:00 [DBG] Próba pobrania danych takich jak: [{"Id":"401e1832-436a-43dd-73a8-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"b65cc7d3-b6aa-4c80-73a9-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"9f98e515-6789-4134-73aa-08d7190ee968","Pesel":"62357889439","Imie":"Anna","Nazwisko":"Dymna","AdresId":"fe4f0c90-d0ec-4d7a-1873-08d719100ec8","Adres":null,"$type":"KlientEntity"},{"Id":"163f3251-c82b-439f-1a93-08d719ddff5b","Pesel":"65987441365","Imie":"Szymo","Nazwisko":"NAzwisko","AdresId":"e24f2861-9edc-4f53-1bb1-08d719ddce38","Adres":null,"$type":"KlientEntity"},{"Id":"f2e8c867-527b-4cb9-bc2f-08d71a9cce00","Pesel":"65841236548","Imie":"Zuza","Nazwisko":"Zuza","AdresId":null,"Adres":null,"$type":"KlientEntity"},{"Id":"63f1cae5-6579-467c-59ad-08d71aa1540a","Pesel":"67012315643","Imie":"Stefan","Nazwisko":"Bronczyk","AdresId":null,"Adres":null,"$type":"KlientEntity"}]
+2019-08-06 21:07:42.699 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 109.3587ms.
+2019-08-06 21:07:42.700 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.KlientEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-06 21:07:42.702 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 112.2784ms
+2019-08-06 21:07:42.702 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-06 21:07:42.702 +02:00 [INF] Request finished in 116.5102ms 200 application/json; charset=utf-8

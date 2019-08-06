@@ -28,7 +28,7 @@ namespace Klient.WebAPI.Controllers
             return Ok(result);
         }
 
-        // GET: api/Klient/5
+     
         [HttpGet("{id}")]
         public async Task<ActionResult> GetAdres([FromRoute] Guid id)
         {
@@ -36,7 +36,7 @@ namespace Klient.WebAPI.Controllers
             return Ok(result);
         }
 
-        // PUT: api/Klient/5
+        // PUT: 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresModel model)
         {
@@ -53,7 +53,7 @@ namespace Klient.WebAPI.Controllers
             return Ok(result);
         }
 
-        // POST: api/Klient
+        // POST: 
         [HttpPost]
         public async Task<IActionResult> CreateAdres([FromBody] CreateAdresModel model)
         {
@@ -64,13 +64,13 @@ namespace Klient.WebAPI.Controllers
                 Ulica = model.Ulica,
                 NrDomu = model.NrDomu,
                 NrMieszkania = model.NrMieszkania,
-                
+
             }));
 
             return Ok(result);
         }
 
-        // DELETE: api/Klient/5
+        // DELETE: 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
