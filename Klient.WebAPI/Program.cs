@@ -10,14 +10,6 @@ namespace Klient.WebAPI
     {
         public static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration()
-                            .MinimumLevel.Debug()
-                            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-                            .Enrich.FromLogContext()
-                            .WriteTo.Console()
-                            .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
-                            .CreateLogger();
-
             try
             {
                 CreateWebHostBuilder(args).Build().Run();

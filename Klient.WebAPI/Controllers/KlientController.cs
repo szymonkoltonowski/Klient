@@ -7,6 +7,7 @@ using Klient.DAO.Commands;
 using Klient.DAO.Models;
 using Klient.WebAPI.Models;
 using Serilog;
+using Serilog.Extensions.Logging;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -15,10 +16,12 @@ namespace Klient.WebAPI.Controllers
     public class KlientController : ControllerBase
     {
         private readonly IMediator _mediator;
+        readonly ILogger _logger;
 
-        public KlientController(IMediator mediator)
+        public KlientController(IMediator mediator, ILogger logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         // GET: api/Klient
@@ -26,7 +29,8 @@ namespace Klient.WebAPI.Controllers
         public async Task<ActionResult> GetKlienci()
         { 
             var result = await _mediator.Send(new GetKlienciQuery());
-            Log.Debug("Próba pobrania danych takich jak: {@result}", result);
+            //Log.Debug("Próba pobrania danych test: {@result}", result);
+            _logger.Debug("Próba logowania: {@result}", result);
             return Ok(result);
         }
 
@@ -47,8 +51,9 @@ namespace Klient.WebAPI.Controllers
                 Id = id,
                 Pesel = model.Pesel,
                 Imie = model.Imie,
-                Nazwisko = model.Nazwisko
-                
+                Nazwisko = model.Nazwisko,
+                AdresId = model.AdresId
+
             }));
 
             return Ok(result);
@@ -65,7 +70,7 @@ namespace Klient.WebAPI.Controllers
                 Imie = model.Imie,
                 Nazwisko = model.Nazwisko,
                 AdresId = model.AdresId
-            })) ;
+            }));
 
             return Ok(result);
         }

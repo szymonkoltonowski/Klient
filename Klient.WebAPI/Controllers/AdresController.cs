@@ -6,14 +6,18 @@ using Klient.WebAPI.Models;
 using Klient.DAO.Models;
 using Klient.DAO.Commands;
 using Klient.DAO.Queries;
+using Microsoft.Extensions.Logging;
 
 namespace Klient.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AdresController : ControllerBase
-    {
+
+        {
+
         private readonly IMediator _mediator;
+
 
         public AdresController(IMediator mediator)
         {

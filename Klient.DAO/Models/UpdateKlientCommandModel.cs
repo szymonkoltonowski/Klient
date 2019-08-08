@@ -13,5 +13,7 @@ namespace Klient.DAO.Models
         public string Imie { get; set; }
 
         public string Nazwisko { get; set; }
+        public Guid? AdresId { get; set; }
+
     }
 }

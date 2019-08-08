@@ -32,7 +32,8 @@ namespace Klient.DAO.Handlers.Commands
             klientEntity.Imie = request.Model.Imie;
             klientEntity.Nazwisko = request.Model.Nazwisko;
             klientEntity.Pesel = request.Model.Pesel;
-
+            klientEntity.AdresId = request.Model.AdresId;
+                
             await _dataContext.SaveChangesAsync(cancellationToken);
 
             return await Unit.Task;

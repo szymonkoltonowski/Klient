@@ -26,7 +26,8 @@ namespace Klient.DAO.Handlers.Commands
                 Id = request.Model.Id,
                 Pesel = request.Model.Pesel,
                 Imie = request.Model.Imie,
-                Nazwisko = request.Model.Nazwisko
+                Nazwisko = request.Model.Nazwisko,
+                AdresId = request.Model.AdresId
             };
 
             _dataContext.Klient.Add(klientEntity);

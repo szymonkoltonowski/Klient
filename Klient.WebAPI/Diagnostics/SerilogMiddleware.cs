@@ -14,8 +14,6 @@ namespace Klient.WebAPI.Diagnostics
         const string MessageTemplate =
             "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
 
-        static readonly ILogger Log = Serilog.Log.ForContext<SerilogMiddleware>();
-
         readonly RequestDelegate _next;
 
         public SerilogMiddleware(RequestDelegate next)
@@ -37,7 +35,7 @@ namespace Klient.WebAPI.Diagnostics
                 var statusCode = httpContext.Response?.StatusCode;
                 var level = statusCode > 499 ? LogEventLevel.Error : LogEventLevel.Information;
 
-                var log = level == LogEventLevel.Error ? LogForErrorContext(httpContext) : Log;
+                var log =  LogForErrorContext(httpContext);
                 log.Write(level, MessageTemplate, httpContext.Request.Method, httpContext.Request.Path, statusCode, sw.Elapsed.TotalMilliseconds);
             }
             // Never caught, because `LogException()` returns false.

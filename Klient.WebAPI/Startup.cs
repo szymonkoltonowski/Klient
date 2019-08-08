@@ -10,6 +10,10 @@ using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
 using Klient.WebAPI.Diagnostics;
 using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using System;
+using Serilog;
+using Serilog.Events;
 
 namespace Klient.WebAPI
 {
@@ -21,9 +25,11 @@ namespace Klient.WebAPI
         }
 
         public IConfiguration Configuration { get; }
+        public IContainer ApplicationContainer { get; private set; }
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -42,9 +48,24 @@ namespace Klient.WebAPI
             });
             services.AddMediatR(Assembly.Load("Klient.DAO"));
 
+            Log.Logger = new LoggerConfiguration()
+                      .Enrich.FromLogContext()
+                      .WriteTo.Console()
+                      .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
+                      .CreateLogger();
+            var builder = new ContainerBuilder();
+            builder.Populate(services);
+            builder.Register<ILogger>((c, p) => {return Log.Logger;}).SingleInstance();
+
+            ApplicationContainer = builder.Build();
+            return new AutofacServiceProvider(ApplicationContainer);
         }
+
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+ 
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

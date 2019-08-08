@@ -11,8 +11,7 @@ namespace Klient.Model.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public Guid Id { get; set; }
-        [Required]
-        [RegularExpression("[0-11]{11}", ErrorMessage = "Pesel musi składać się z 11 cyfr.")]
+        [Required, RegularExpression(@"^\d{11}$")]
         public string Pesel { get; set; }
         [Required]
         public string Imie { get; set; }
