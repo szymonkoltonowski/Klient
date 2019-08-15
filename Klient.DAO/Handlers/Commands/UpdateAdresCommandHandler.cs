@@ -22,16 +22,16 @@ namespace Klient.DAO.Handlers.Commands
 
         public async Task<Unit> Handle(UpdateAdresCommand request, CancellationToken cancellationToken)
         {
-            var adresEntity = await _dataContext.Adres.FirstOrDefaultAsync(adres => adres.Id == request.Model.Id, cancellationToken);
+            var adresEntity = await _dataContext.Adres.FirstOrDefaultAsync(adres => adres.Id == request.Id, cancellationToken);
 
             if (adresEntity == null)
             {
                 throw new EntityNotFoundException();
             }
-            adresEntity.Ulica = request.Model.Ulica;
-            adresEntity.NrMieszkania = request.Model.NrMieszkania;
-            adresEntity.NrDomu = request.Model.NrDomu;
-            adresEntity.Miasto = request.Model.Miasto;
+            adresEntity.Ulica = request.Ulica;
+            adresEntity.NrMieszkania = request.NrMieszkania;
+            adresEntity.NrDomu = request.NrDomu;
+            adresEntity.Miasto = request.Miasto;
 
 
             await _dataContext.SaveChangesAsync(cancellationToken);

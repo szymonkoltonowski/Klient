@@ -1,15 +1,17 @@
-﻿using Klient.DAO.Models;
-using MediatR;
+﻿using MediatR;
+using System;
 
 namespace Klient.DAO.Commands
 {
     public class UpdateAdresCommand : IRequest
     {
-        public UpdateAdresCommandModel Model { get; }
+        public Guid Id { get; set; }
 
-        public UpdateAdresCommand(UpdateAdresCommandModel model)
-        {
-            Model = model;
-        }
+        public string Miasto { get; set; }
+
+        public string NrMieszkania { get; set; }
+
+        public string NrDomu { get; set; }
+        public string Ulica { get; set; }
     }
 }

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.WebAPI", "Klient.WebAPI\Klient.WebAPI.csproj", "{0A14190F-9674-4124-BE0C-B57FE428E58B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klient.WebAPI", "Klient.WebAPI\Klient.WebAPI.csproj", "{0A14190F-9674-4124-BE0C-B57FE428E58B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.DAO", "Klient.DAO\Klient.DAO.csproj", "{E02CB6DA-AF33-4F66-9306-D9ED8C4A4037}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klient.DAO", "Klient.DAO\Klient.DAO.csproj", "{E02CB6DA-AF33-4F66-9306-D9ED8C4A4037}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.Model", "Klient.Model\Klient.Model.csproj", "{C591EA39-8538-4F78-91D5-DB600A84A952}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klient.Model", "Klient.Model\Klient.Model.csproj", "{C591EA39-8538-4F78-91D5-DB600A84A952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.Core", "Klient.Core\Klient.Core.csproj", "{10397F1B-7CA3-4714-8CD7-E720C95665BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klient.Core", "Klient.Core\Klient.Core.csproj", "{10397F1B-7CA3-4714-8CD7-E720C95665BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klient.DTO", "Klient.DTO\Klient.DTO.csproj", "{7EDA5833-F392-4265-9F4D-5B7CF99128A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{10397F1B-7CA3-4714-8CD7-E720C95665BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10397F1B-7CA3-4714-8CD7-E720C95665BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10397F1B-7CA3-4714-8CD7-E720C95665BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EDA5833-F392-4265-9F4D-5B7CF99128A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EDA5833-F392-4265-9F4D-5B7CF99128A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EDA5833-F392-4265-9F4D-5B7CF99128A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EDA5833-F392-4265-9F4D-5B7CF99128A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

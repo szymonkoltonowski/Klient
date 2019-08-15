@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Klient.DAO.Queries;
 using Klient.DAO.Commands;
-using Klient.DAO.Models;
 using Klient.WebAPI.Models;
+using Klient.DTO.Models;
 using Serilog;
+using AutoMapper;
+using Klient.Model.Entities;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -16,11 +18,14 @@ namespace Klient.WebAPI.Controllers
     {
         private readonly IMediator _mediator;
         readonly ILogger _logger;
+        private readonly IMapper _mapper;
 
-        public KlientController(IMediator mediator, ILogger logger)
+
+        public KlientController(IMediator mediator, ILogger logger, IMapper mapper)
         {
             _mediator = mediator;
             _logger = logger;
+            _mapper = mapper;
         }
 
         // GET: api/Klient
@@ -28,7 +33,7 @@ namespace Klient.WebAPI.Controllers
         public async Task<ActionResult> GetKlienci()
         { 
             var result = await _mediator.Send(new GetKlienciQuery());
-            //Log.Debug("Próba pobrania danych test: {@result}", result);
+
             _logger.Debug("Próba logowania: {@result}", result);
             return Ok(result);
         }
@@ -38,14 +43,16 @@ namespace Klient.WebAPI.Controllers
         public async Task<ActionResult> GetKlient([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetKlientByIdQuery(id));
-            return Ok(result);
+            return Ok(_mapper.Map<KlientDTO>(result));
+           //return Ok(result);
         }
 
         // PUT: api/Klient/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateKlient([FromRoute] Guid id, [FromBody] UpdateKlientModel model)
         {
-            var result = await _mediator.Send(new UpdateKlientCommand(new UpdateKlientCommandModel
+            
+            var result = await _mediator.Send(new UpdateKlientCommand
             {
                 Id = id,
                 Pesel = model.Pesel,
@@ -53,7 +60,7 @@ namespace Klient.WebAPI.Controllers
                 Nazwisko = model.Nazwisko,
                 AdresId = model.AdresId
 
-            }));
+            });
 
             return Ok(result);
         }
@@ -62,14 +69,14 @@ namespace Klient.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateKlient([FromBody] CreateKlientModel model)
         {
-            var result = await _mediator.Send(new CreateKlientCommand(new CreateKlientCommandModel
+            var result = await _mediator.Send(new CreateKlientCommand
             {
                 Id = model.Id,
                 Pesel = model.Pesel,
                 Imie = model.Imie,
                 Nazwisko = model.Nazwisko,
-                AdresId = model.AdresId
-            }));
+                //AdresId = model.AdresId
+            });
 
             return Ok(result);
         }

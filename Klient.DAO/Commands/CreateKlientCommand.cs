@@ -1,18 +1,17 @@
-﻿using Klient.DAO.Models;
-using MediatR;
+﻿using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Klient.DAO.Commands
 {
     public class CreateKlientCommand : IRequest
     {
-        public CreateKlientCommandModel Model { get; }
+        public Guid Id { get; set; }
 
-        public CreateKlientCommand(CreateKlientCommandModel model)
-        {
-            Model = model;
-        }
+        public string Pesel { get; set; }
+
+        public string Imie { get; set; }
+
+        public string Nazwisko { get; set; }
+        public Guid? AdresId { get; set; }
     }
 }

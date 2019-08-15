@@ -14,6 +14,7 @@ using Autofac.Extensions.DependencyInjection;
 using System;
 using Serilog;
 using Klient.DAO.Commands;
+using AutoMapper;
 
 namespace Klient.WebAPI
 {
@@ -46,8 +47,9 @@ namespace Klient.WebAPI
                     Version = "v1"
                 });
             });
+            services.AddAutoMapper(typeof(Startup));
             services.AddMediatR(typeof(CreateAdresCommand).Assembly);
-
+            //services.AddAutoMapper();
             Log.Logger = new LoggerConfiguration()              
                 .Enrich.FromLogContext()
                 .WriteTo.Console()

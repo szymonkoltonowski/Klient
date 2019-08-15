@@ -21,11 +21,11 @@ namespace Klient.DAO.Handlers.Commands
         {
             var adresEntity = new AdresEntity
             {
-                Id = request.Model.Id,
-                Miasto = request.Model.Miasto,
-                Ulica = request.Model.Ulica,
-                NrDomu = request.Model.NrDomu,
-                NrMieszkania = request.Model.NrMieszkania
+                Id = request.Id,
+                Miasto = request.Miasto,
+                Ulica = request.Ulica,
+                NrDomu = request.NrDomu,
+                NrMieszkania = request.NrMieszkania
 
             };
 

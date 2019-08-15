@@ -3,11 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Klient.WebAPI.Models;
-using Klient.DAO.Models;
 using Klient.DAO.Commands;
 using Klient.DAO.Queries;
-using Microsoft.Extensions.Logging;
-using System.Linq;
 using Klient.Model.Entities;
 
 namespace Klient.WebAPI.Controllers
@@ -46,7 +43,7 @@ namespace Klient.WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresModel model)
         {
-            var result = await _mediator.Send(new UpdateAdresCommand(new UpdateAdresCommandModel
+            var result = await _mediator.Send(new UpdateAdresCommand
             {
                 Id = id,
                 Miasto = model.Miasto,
@@ -54,7 +51,7 @@ namespace Klient.WebAPI.Controllers
                 NrDomu = model.NrDomu,
                 NrMieszkania = model.NrMieszkania
 
-            }));
+            });
 
             return Ok(result);
         }
@@ -63,7 +60,7 @@ namespace Klient.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAdres([FromBody] CreateAdresModel model)
         {
-            var result = await _mediator.Send(new CreateAdresCommand(new CreateAdresCommandModel
+            var result = await _mediator.Send(new CreateAdresCommand
             {
                 Id = model.Id,
                 Miasto = model.Miasto,
@@ -71,7 +68,7 @@ namespace Klient.WebAPI.Controllers
                 NrDomu = model.NrDomu,
                 NrMieszkania = model.NrMieszkania,
 
-            }));
+            });
 
             return Ok(result);
         }

@@ -23,11 +23,11 @@ namespace Klient.DAO.Handlers.Commands
         {
             var klientEntity = new KlientEntity
             {
-                Id = request.Model.Id,
-                Pesel = request.Model.Pesel,
-                Imie = request.Model.Imie,
-                Nazwisko = request.Model.Nazwisko,
-                AdresId = request.Model.AdresId
+                Id = request.Id,
+                Pesel = request.Pesel,
+                Imie = request.Imie,
+                Nazwisko = request.Nazwisko,
+                AdresId = request.AdresId
             };
 
             _dataContext.Klient.Add(klientEntity);

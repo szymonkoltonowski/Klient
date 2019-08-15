@@ -1,15 +1,17 @@
-﻿using Klient.DAO.Models;
-using MediatR;
+﻿using MediatR;
+using System;
 
 namespace Klient.DAO.Commands
 {
     public class CreateAdresCommand : IRequest
     {
-        public CreateAdresCommandModel Model { get; }
+        public Guid Id { get; set; }
 
-        public CreateAdresCommand(CreateAdresCommandModel model)
-        {
-            Model = model;
-        }
+        public string Miasto { get; set; }
+
+        public string NrMieszkania { get; set; }
+
+        public string NrDomu { get; set; }
+        public string Ulica { get; set; }
     }
 }
