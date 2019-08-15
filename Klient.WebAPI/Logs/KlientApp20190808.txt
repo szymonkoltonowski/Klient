@@ -55,3 +55,52 @@ FROM [Klient] AS [k]
 2019-08-08 11:22:57.170 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 60.3005ms
 2019-08-08 11:22:57.170 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
 2019-08-08 11:22:57.171 +02:00 [INF] Request finished in 67.7682ms 200 application/json; charset=utf-8
+2019-08-08 13:20:44.633 +02:00 [INF] User profile is available. Using 'C:\Users\szymk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-08 13:20:45.512 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-08 13:20:45.533 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-08 13:20:45.812 +02:00 [INF] HTTP GET /index.html responded 200 in 201.905 ms
+2019-08-08 13:20:45.828 +02:00 [INF] Request finished in 318.1132ms 200 text/html
+2019-08-08 13:20:45.966 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 13:20:46.100 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 132.7374 ms
+2019-08-08 13:20:46.100 +02:00 [INF] Request finished in 133.5295ms 200 application/json;charset=utf-8
+2019-08-08 13:56:14.669 +02:00 [INF] User profile is available. Using 'C:\Users\szymk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-08 13:56:16.008 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-08 13:56:16.029 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-08 13:56:16.395 +02:00 [INF] HTTP GET /index.html responded 200 in 279.3634 ms
+2019-08-08 13:56:16.411 +02:00 [INF] Request finished in 405.6737ms 200 text/html
+2019-08-08 13:56:16.676 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 13:56:16.824 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 147.2439 ms
+2019-08-08 13:56:16.824 +02:00 [INF] Request finished in 148.1116ms 200 application/json;charset=utf-8
+2019-08-08 13:58:22.018 +02:00 [INF] User profile is available. Using 'C:\Users\szymk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-08 13:58:22.846 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-08 13:58:22.866 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-08 13:58:23.131 +02:00 [INF] HTTP GET /index.html responded 200 in 197.14520000000002 ms
+2019-08-08 13:58:23.146 +02:00 [INF] Request finished in 302.3956ms 200 text/html
+2019-08-08 13:58:23.288 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 13:58:23.432 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 143.8261 ms
+2019-08-08 13:58:23.433 +02:00 [INF] Request finished in 144.5685ms 200 application/json;charset=utf-8
+2019-08-08 14:00:47.651 +02:00 [INF] User profile is available. Using 'C:\Users\szymk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-08 14:00:49.109 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-08 14:00:49.132 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-08 14:00:49.484 +02:00 [INF] HTTP GET /index.html responded 200 in 271.84270000000004 ms
+2019-08-08 14:00:49.500 +02:00 [INF] Request finished in 393.7811ms 200 text/html
+2019-08-08 14:00:49.682 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 14:00:49.830 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 146.6773 ms
+2019-08-08 14:00:49.837 +02:00 [INF] Request finished in 155.3377ms 200 application/json;charset=utf-8
+2019-08-08 14:01:40.678 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 14:01:40.694 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 13.9795 ms
+2019-08-08 14:01:40.694 +02:00 [INF] Request finished in 16.0177ms 200 application/json;charset=utf-8
+2019-08-08 14:03:32.868 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 14:03:32.881 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 11.7322 ms
+2019-08-08 14:03:32.882 +02:00 [INF] Request finished in 13.9697ms 200 application/json;charset=utf-8
+2019-08-08 14:07:27.614 +02:00 [INF] User profile is available. Using 'C:\Users\szymk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-08 14:07:28.874 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-08 14:07:28.890 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-08 14:07:29.137 +02:00 [INF] HTTP GET /index.html responded 200 in 184.7877 ms
+2019-08-08 14:07:29.148 +02:00 [INF] Request finished in 275.8285ms 200 text/html
+2019-08-08 14:07:29.369 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 14:07:29.487 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 117.76950000000001 ms
+2019-08-08 14:07:29.487 +02:00 [INF] Request finished in 123.3812ms 200 application/json;charset=utf-8
+2019-08-08 14:07:37.986 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-08 14:07:37.992 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 5.5898 ms
+2019-08-08 14:07:37.992 +02:00 [INF] Request finished in 6.1449ms 200 application/json;charset=utf-8

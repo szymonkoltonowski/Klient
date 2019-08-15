@@ -7,7 +7,6 @@ using Klient.DAO.Commands;
 using Klient.DAO.Models;
 using Klient.WebAPI.Models;
 using Serilog;
-using Serilog.Extensions.Logging;
 
 namespace Klient.WebAPI.Controllers
 {

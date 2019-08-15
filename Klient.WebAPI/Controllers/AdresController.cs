@@ -7,6 +7,8 @@ using Klient.DAO.Models;
 using Klient.DAO.Commands;
 using Klient.DAO.Queries;
 using Microsoft.Extensions.Logging;
+using System.Linq;
+using Klient.Model.Entities;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -26,18 +28,18 @@ namespace Klient.WebAPI.Controllers
 
         // GET: api/Adres
         [HttpGet]
-        public async Task<ActionResult> GetAdres()
+        public async Task<ActionResult<System.Collections.Generic.IEnumerable<Model.Entities.AdresEntity>>> GetAdreses()
         {
-            var result = await _mediator.Send(new GetAdresQuery());
+            System.Collections.Generic.IEnumerable<Model.Entities.AdresEntity> result = await _mediator.Send(new GetAdresQuery());
             return Ok(result);
         }
 
      
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetAdres([FromRoute] Guid id)
+        public async Task<ActionResult<AdresEntity>> GetAdres([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetAdresByIdQuery(id));
-            return Ok(result);
+            return result;
         }
 
         // PUT: 

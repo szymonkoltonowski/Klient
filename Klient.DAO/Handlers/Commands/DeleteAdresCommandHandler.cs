@@ -3,7 +3,6 @@ using Klient.DAO.Commands;
 using Klient.Model;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

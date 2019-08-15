@@ -13,7 +13,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using System;
 using Serilog;
-using Serilog.Events;
+using Klient.DAO.Commands;
 
 namespace Klient.WebAPI
 {
@@ -46,17 +46,19 @@ namespace Klient.WebAPI
                     Version = "v1"
                 });
             });
-            services.AddMediatR(Assembly.Load("Klient.DAO"));
+            services.AddMediatR(typeof(CreateAdresCommand).Assembly);
 
-            Log.Logger = new LoggerConfiguration()
-                      .Enrich.FromLogContext()
-                      .WriteTo.Console()
-                      .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
-                      .CreateLogger();
+            Log.Logger = new LoggerConfiguration()              
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
             var builder = new ContainerBuilder();
             builder.Populate(services);
-            builder.Register<ILogger>((c, p) => {return Log.Logger;}).SingleInstance();
-
+            builder.Register<ILogger>((c, p) => 
+                {
+                    return Log.Logger;
+                }).SingleInstance();
             ApplicationContainer = builder.Build();
             return new AutofacServiceProvider(ApplicationContainer);
         }

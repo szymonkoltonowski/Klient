@@ -20,5 +20,10 @@ namespace Klient.Model.Entities
         public string NrMieszkania { get; set; }
 
         public ICollection<KlientEntity> Klient { get; set; }
+
+        public void Clean()
+        {
+
+        }
     }
 }
