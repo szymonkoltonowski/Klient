@@ -1,0 +1,99 @@
+2019-08-16 19:38:27.564 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-16 19:38:28.199 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-16 19:38:28.213 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-16 19:38:28.390 +02:00 [INF] HTTP GET /index.html responded 200 in 139.0274 ms
+2019-08-16 19:38:28.396 +02:00 [INF] Request finished in 198.1176ms 200 text/html
+2019-08-16 19:38:28.483 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-16 19:38:28.561 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 77.12 ms
+2019-08-16 19:38:28.561 +02:00 [INF] Request finished in 77.6251ms 200 application/json;charset=utf-8
+2019-08-16 19:38:40.213 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient  
+2019-08-16 19:38:40.216 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-16 19:38:40.231 +02:00 [INF] Route matched with {action = "GetKlienci", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlienci() on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-16 19:38:40.408 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) - Validation state: "Valid"
+2019-08-16 19:38:40.761 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-16 19:38:40.929 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[AdresId], [k].[Imie], [k].[Nazwisko], [k].[Pesel]
+FROM [Klient] AS [k]
+2019-08-16 19:38:40.964 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 553.2254ms.
+2019-08-16 19:38:40.971 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.KlientEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-16 19:38:40.977 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI) in 744.009ms
+2019-08-16 19:38:40.978 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlienci (Klient.WebAPI)'
+2019-08-16 19:38:40.979 +02:00 [INF] Request finished in 766.5582ms 200 application/json; charset=utf-8
+2019-08-16 19:38:53.370 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient/3daaa492-60b3-4a1c-bcd7-52618e0ed416  
+2019-08-16 19:38:53.371 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI)'
+2019-08-16 19:38:53.382 +02:00 [INF] Route matched with {action = "GetKlient", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlient(System.Guid) on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-16 19:38:53.389 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI) - Validation state: "Valid"
+2019-08-16 19:38:53.397 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-16 19:38:53.434 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [klient].[Id], [klient].[AdresId], [klient].[Imie], [klient].[Nazwisko], [klient].[Pesel]
+FROM [Klient] AS [klient]
+WHERE [klient].[Id] = @__request__id_0
+2019-08-16 19:38:53.449 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 60.6832ms.
+2019-08-16 19:38:53.450 +02:00 [INF] Executing ObjectResult, writing value of type 'Klient.DTO.Models.KlientDTO'.
+2019-08-16 19:38:53.451 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI) in 69.2526ms
+2019-08-16 19:38:53.451 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI)'
+2019-08-16 19:38:53.451 +02:00 [INF] Request finished in 81.1496ms 200 application/json; charset=utf-8
+2019-08-16 19:40:52.354 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-16 19:40:52.702 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-16 19:40:52.710 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-16 19:40:52.832 +02:00 [INF] HTTP GET /index.html responded 200 in 84.795 ms
+2019-08-16 19:40:52.838 +02:00 [INF] Request finished in 136.7718ms 200 text/html
+2019-08-16 19:40:52.908 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-16 19:40:52.979 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 69.9264 ms
+2019-08-16 19:40:52.979 +02:00 [INF] Request finished in 70.2776ms 200 application/json;charset=utf-8
+2019-08-16 19:41:01.827 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-16 19:41:01.832 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI)'
+2019-08-16 19:41:01.849 +02:00 [INF] Route matched with {action = "GetAdreses", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Klient.Model.Entities.AdresEntity]]] GetAdreses() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-16 19:41:01.855 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI) - Validation state: "Valid"
+2019-08-16 19:41:02.083 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-16 19:41:02.207 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-16 19:41:02.244 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 386.4596ms.
+2019-08-16 19:41:02.251 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.AdresEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-16 19:41:02.257 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI) in 406.7228ms
+2019-08-16 19:41:02.258 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI)'
+2019-08-16 19:41:02.259 +02:00 [INF] Request finished in 432.3234ms 200 application/json; charset=utf-8
+2019-08-16 19:48:49.819 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-16 19:48:50.189 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-16 19:48:50.198 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-16 19:48:50.334 +02:00 [INF] HTTP GET /index.html responded 200 in 97.8456 ms
+2019-08-16 19:48:50.340 +02:00 [INF] Request finished in 152.2977ms 200 text/html
+2019-08-16 19:48:50.417 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-16 19:48:50.504 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 86.5852 ms
+2019-08-16 19:48:50.504 +02:00 [INF] Request finished in 86.9821ms 200 application/json;charset=utf-8
+2019-08-16 19:48:57.362 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Klient/3daaa492-60b3-4a1c-bcd7-52618e0ed416  
+2019-08-16 19:48:57.365 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI)'
+2019-08-16 19:48:57.388 +02:00 [INF] Route matched with {action = "GetKlient", controller = "Klient"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetKlient(System.Guid) on controller Klient.WebAPI.Controllers.KlientController (Klient.WebAPI).
+2019-08-16 19:48:57.553 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI) - Validation state: "Valid"
+2019-08-16 19:48:57.811 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-16 19:48:57.945 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [klient].[Id], [klient].[AdresId], [klient].[Imie], [klient].[Nazwisko], [klient].[Pesel]
+FROM [Klient] AS [klient]
+WHERE [klient].[Id] = @__request__id_0
+2019-08-16 19:50:40.699 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 103143.23090000001ms.
+2019-08-16 19:50:40.706 +02:00 [INF] Executing ObjectResult, writing value of type 'Klient.DTO.Models.KlientDTO'.
+2019-08-16 19:50:40.714 +02:00 [INF] Executed action Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI) in 103324.857ms
+2019-08-16 19:50:40.715 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.KlientController.GetKlient (Klient.WebAPI)'
+2019-08-16 19:50:40.716 +02:00 [INF] Request finished in 103354.5477ms 200 application/json; charset=utf-8
+2019-08-16 23:47:08.717 +02:00 [INF] User profile is available. Using 'C:\Users\Szymon\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-16 23:47:09.258 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/index.html  
+2019-08-16 23:47:09.271 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-08-16 23:47:09.426 +02:00 [INF] HTTP GET /index.html responded 200 in 119.7239 ms
+2019-08-16 23:47:09.432 +02:00 [INF] Request finished in 174.6374ms 200 text/html
+2019-08-16 23:47:09.502 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/swagger/v1/swagger.json  
+2019-08-16 23:47:09.574 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 71.6024 ms
+2019-08-16 23:47:09.574 +02:00 [INF] Request finished in 71.9489ms 200 application/json;charset=utf-8
+2019-08-16 23:47:15.255 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:2036/api/Adres  
+2019-08-16 23:47:15.259 +02:00 [INF] Executing endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI)'
+2019-08-16 23:47:15.274 +02:00 [INF] Route matched with {action = "GetAdreses", controller = "Adres"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Klient.Model.Entities.AdresEntity]]] GetAdreses() on controller Klient.WebAPI.Controllers.AdresController (Klient.WebAPI).
+2019-08-16 23:47:15.281 +02:00 [INF] Executing action method Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI) - Validation state: "Valid"
+2019-08-16 23:47:15.511 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-08-16 23:47:15.643 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Miasto], [a].[NrDomu], [a].[NrMieszkania], [a].[Ulica]
+FROM [Adres] AS [a]
+2019-08-16 23:47:15.680 +02:00 [INF] Executed action method Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 396.30240000000003ms.
+2019-08-16 23:47:15.687 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Klient.Model.Entities.AdresEntity, Klient.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-08-16 23:47:15.693 +02:00 [INF] Executed action Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI) in 417.084ms
+2019-08-16 23:47:15.693 +02:00 [INF] Executed endpoint 'Klient.WebAPI.Controllers.AdresController.GetAdreses (Klient.WebAPI)'
+2019-08-16 23:47:15.695 +02:00 [INF] Request finished in 439.2019ms 200 application/json; charset=utf-8

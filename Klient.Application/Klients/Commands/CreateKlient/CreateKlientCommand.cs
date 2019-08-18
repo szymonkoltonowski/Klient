@@ -1,14 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
-namespace Klient.DTO.Models
+namespace Klient.Application.Klients.Commands.CreateKlient
 {
-    public class KlientDTO
+    public class CreateKlientCommand : IRequest
     {
+        public Guid Id { get; set; }
         public string Pesel { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
-        public string Miasto { get; set; }
         public Guid? AdresId { get; set; }
-
     }
 }

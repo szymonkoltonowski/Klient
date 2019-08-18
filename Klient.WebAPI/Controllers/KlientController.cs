@@ -2,13 +2,15 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Klient.DAO.Queries;
-using Klient.DAO.Commands;
-using Klient.WebAPI.Models;
-using Klient.DTO.Models;
 using Serilog;
 using AutoMapper;
-using Klient.Model.Entities;
+using Klient.Application.Klients.Queries.GetKlient;
+using Klient.Application.Klients.Queries.GetKlientById;
+using Microsoft.AspNetCore.Http;
+using Klient.Application.Klients.Commands.CreateKlient;
+using Klient.Application.Klients.Commands.UpdateKlient;
+using Klient.Application.Klients.Commands.DeleteKlient;
+using Klient.DTO.Models;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -30,26 +32,33 @@ namespace Klient.WebAPI.Controllers
 
         // GET: api/Klient
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> GetKlienci()
         { 
             var result = await _mediator.Send(new GetKlienciQuery());
 
             _logger.Debug("Próba logowania: {@result}", result);
+            //return Ok(_mapper.Map<KlientDTO>(result));
             return Ok(result);
         }
 
         // GET: api/Klient/5
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetKlient([FromRoute] Guid id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<KlientViewModel>> GetKlient([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetKlientByIdQuery(id));
-            return Ok(_mapper.Map<KlientDTO>(result));
-           //return Ok(result);
+
+            //return Ok(_mapper.Map<KlientDTO>(result));
+            return Ok(result);
         }
 
         // PUT: api/Klient/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateKlient([FromRoute] Guid id, [FromBody] UpdateKlientModel model)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateKlient([FromRoute] Guid id, [FromBody] UpdateKlientCommand model)
         {
             
             var result = await _mediator.Send(new UpdateKlientCommand
@@ -67,22 +76,19 @@ namespace Klient.WebAPI.Controllers
 
         // POST: api/Klient
         [HttpPost]
-        public async Task<IActionResult> CreateKlient([FromBody] CreateKlientModel model)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> CreateKlient([FromBody] CreateKlientCommand model)
         {
-            var result = await _mediator.Send(new CreateKlientCommand
-            {
-                Id = model.Id,
-                Pesel = model.Pesel,
-                Imie = model.Imie,
-                Nazwisko = model.Nazwisko,
-                //AdresId = model.AdresId
-            });
-
+            var result = await _mediator.Send(model);
+            //return NoContent();
             return Ok(result);
         }
 
         // DELETE: api/Klient/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new DeleteKlientCommand(id));

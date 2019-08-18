@@ -2,10 +2,13 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Klient.WebAPI.Models;
-using Klient.DAO.Commands;
-using Klient.DAO.Queries;
-using Klient.Model.Entities;
+using Klient.Application.Adresses.Queries.GetAdres;
+using Klient.Application.Adresses.Queries.GetAdresById;
+using Klient.Application.Adresses.Commands.UpdateAdres;
+using Klient.Application.Adresses.Commands.CreateAdres;
+using Klient.Application.Adresses.Commands.DeleteAdres;
+using System.Collections.Generic;
+using Klient.DTO.Models;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -16,8 +19,7 @@ namespace Klient.WebAPI.Controllers
         {
 
         private readonly IMediator _mediator;
-
-
+        
         public AdresController(IMediator mediator)
         {
             _mediator = mediator;
@@ -25,7 +27,7 @@ namespace Klient.WebAPI.Controllers
 
         // GET: api/Adres
         [HttpGet]
-        public async Task<ActionResult<System.Collections.Generic.IEnumerable<Model.Entities.AdresEntity>>> GetAdreses()
+        public async Task<ActionResult<IEnumerable<AdresDTO>>> GetAdreses()
         {
             System.Collections.Generic.IEnumerable<Model.Entities.AdresEntity> result = await _mediator.Send(new GetAdresQuery());
             return Ok(result);
@@ -33,15 +35,15 @@ namespace Klient.WebAPI.Controllers
 
      
         [HttpGet("{id}")]
-        public async Task<ActionResult<AdresEntity>> GetAdres([FromRoute] Guid id)
+        public async Task<ActionResult<IEnumerable<AdresDTO>>> GetAdres([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetAdresByIdQuery(id));
-            return result;
+            return Ok(result);
         }
 
         // PUT: 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresModel model)
+        public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresCommand model)
         {
             var result = await _mediator.Send(new UpdateAdresCommand
             {
@@ -58,17 +60,9 @@ namespace Klient.WebAPI.Controllers
 
         // POST: 
         [HttpPost]
-        public async Task<IActionResult> CreateAdres([FromBody] CreateAdresModel model)
+        public async Task<IActionResult> CreateAdres([FromBody] CreateAdresCommand model)
         {
-            var result = await _mediator.Send(new CreateAdresCommand
-            {
-                Id = model.Id,
-                Miasto = model.Miasto,
-                Ulica = model.Ulica,
-                NrDomu = model.NrDomu,
-                NrMieszkania = model.NrMieszkania,
-
-            });
+            var result = await _mediator.Send(model);
 
             return Ok(result);
         }
