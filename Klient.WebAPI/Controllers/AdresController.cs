@@ -9,6 +9,7 @@ using Klient.Application.Adresses.Commands.CreateAdres;
 using Klient.Application.Adresses.Commands.DeleteAdres;
 using System.Collections.Generic;
 using Klient.DTO.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -26,14 +27,17 @@ namespace Klient.WebAPI.Controllers
 
         // GET: api/Adres
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<AdresDTO>>> GetAdreses()
         {
-            System.Collections.Generic.IEnumerable<Model.Entities.AdresEntity> result = await _mediator.Send(new GetAdresQuery());
+            var result = await _mediator.Send(new GetAdresQuery());
             return Ok(result);
         }
 
      
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<AdresDTO>>> GetAdres([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetAdresByIdQuery(id));
@@ -42,6 +46,8 @@ namespace Klient.WebAPI.Controllers
 
         // PUT: 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresCommand model)
         {
             var result = await _mediator.Send(new UpdateAdresCommand
@@ -59,6 +65,8 @@ namespace Klient.WebAPI.Controllers
 
         // POST: 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateAdres([FromBody] CreateAdresCommand model)
         {
             var result = await _mediator.Send(model);
@@ -68,6 +76,8 @@ namespace Klient.WebAPI.Controllers
 
         // DELETE: 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new DeleteAdresCommand(id));

@@ -1,11 +1,11 @@
-﻿using Klient.Model.Entities;
+﻿using Klient.DTO.Models;
 using MediatR;
 using System;
 
 
 namespace Klient.Application.Klients.Queries.GetKlientById
 {
-    public class GetKlientByIdQuery : IRequest<KlientViewModel>
+    public class GetKlientByIdQuery : IRequest<KlientDTO>
     {
         public Guid id;
 

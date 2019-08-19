@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Serilog;
-using AutoMapper;
 using Klient.Application.Klients.Queries.GetKlient;
 using Klient.Application.Klients.Queries.GetKlientById;
 using Microsoft.AspNetCore.Http;
@@ -31,12 +30,12 @@ namespace Klient.WebAPI.Controllers
         // GET: api/Klient
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> GetKlienci()
+        public async Task<ActionResult<KlientDTO>> GetKlienci()
         { 
             var result = await _mediator.Send(new GetKlienciQuery());
 
             _logger.Debug("Próba logowania: {@result}", result);
-            //return Ok(_mapper.Map<KlientDTO>(result));
+
             return Ok(result);
         }
 
@@ -44,11 +43,11 @@ namespace Klient.WebAPI.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<KlientViewModel>> GetKlient([FromRoute] Guid id)
+        public async Task<ActionResult<KlientDTO>> GetKlient([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetKlientByIdQuery(id));
 
-            //return Ok(_mapper.Map<KlientDTO>(result));
+
             return Ok(result);
         }
 

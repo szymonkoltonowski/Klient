@@ -6,7 +6,7 @@ namespace Klient.Application.Klients.Commands.DeleteKlient
     {
         public DeleteKlientValidatorCommand()
         {
-            RuleFor(v => v.Id).NotEmpty();
+            RuleFor(v => v.Id).NotEmpty().WithMessage("Pole musi być uzupełnione");
         }
     }
 }

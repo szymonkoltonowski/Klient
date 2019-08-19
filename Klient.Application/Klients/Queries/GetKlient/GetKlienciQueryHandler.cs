@@ -25,11 +25,11 @@ namespace Klient.Application.Klients.Queries.GetKlient
         public async Task<IEnumerable<KlientDTO>> Handle(GetKlienciQuery request, CancellationToken cancellationToken)
         {
 
-            var klientEntityList = await _dataContext.Klient.ToListAsync(cancellationToken) ;
+            var klientEntityList = await _dataContext.Klient.Include(x => x.Adres).ToListAsync(cancellationToken) ;
 
-            var dupa = _mapper.Map<List<KlientDTO>>(klientEntityList);
+            var klientDTOList = _mapper.Map<List<KlientDTO>>(klientEntityList);
 
-            return dupa;
+            return klientDTOList;
         }
 
 

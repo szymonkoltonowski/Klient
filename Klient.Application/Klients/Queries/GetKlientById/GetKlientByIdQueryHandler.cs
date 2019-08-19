@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Klient.DAO;
+using Klient.DTO.Models;
 using Klient.Model.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Klient.Application.Klients.Queries.GetKlientById
 {
-    public class GetKlientByIdQueryHandler : IRequestHandler<GetKlientByIdQuery, KlientViewModel>
+    public class GetKlientByIdQueryHandler : IRequestHandler<GetKlientByIdQuery, KlientDTO>
     {
         private readonly DataContext _dataContext;
         private readonly IMapper _mapper;
@@ -20,7 +21,7 @@ namespace Klient.Application.Klients.Queries.GetKlientById
             _mapper = mapper;
         }
 
-        public async Task<KlientViewModel> Handle(GetKlientByIdQuery request, CancellationToken cancellationToken)
+        public async Task<KlientDTO> Handle(GetKlientByIdQuery request, CancellationToken cancellationToken)
         {
             //var klientEntity = await _dataContext.Klient
            //     .Where(klient => klient.Id == request.id)
@@ -29,10 +30,10 @@ namespace Klient.Application.Klients.Queries.GetKlientById
             //return klientEntity;
 
 
-             var klientid = _mapper.Map<KlientViewModel>(await _dataContext
+             var klientDTO = _mapper.Map<KlientDTO>(await _dataContext
                 .Klient.Where(p => p.Id == request.id).Include(p =>p.Adres)
                 .SingleOrDefaultAsync(cancellationToken));
-            return klientid;
+            return klientDTO;
 
         }
 

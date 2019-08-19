@@ -36,7 +36,7 @@ namespace Klient.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            Log.Logger = new LoggerConfiguration()              
+            Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .WriteTo.File("Logs\\KlientApp.txt", rollingInterval: RollingInterval.Day)
@@ -66,18 +66,18 @@ namespace Klient.WebAPI
                     Title = "Klient",
                     Version = "v1"
                 });
-            });        
-            
+            });
+
             var builder = new ContainerBuilder();
             builder.Populate(services);
 
             builder.RegisterAssemblyTypes(typeof(Startup).GetType().Assembly)
                 .Where(t => t.IsClosedTypeOf(typeof(IValidator<>)))
-                .AsImplementedInterfaces();            
-            builder.Register<ILogger>((c, p) => 
-                {
-                    return Log.Logger;
-                }).SingleInstance();
+                .AsImplementedInterfaces();
+            builder.Register<ILogger>((c, p) =>
+            {
+                return Log.Logger;
+            }).SingleInstance();
             ApplicationContainer = builder.Build();
             return new AutofacServiceProvider(ApplicationContainer);
         }
@@ -85,7 +85,7 @@ namespace Klient.WebAPI
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
- 
+
 
             if (env.IsDevelopment())
             {

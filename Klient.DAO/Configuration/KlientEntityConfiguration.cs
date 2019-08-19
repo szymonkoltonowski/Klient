@@ -9,6 +9,9 @@ namespace Klient.Application.Configuration
         public void Configure(EntityTypeBuilder<KlientEntity> builder)
         {
             builder.HasKey(klient => klient.Id);
+            builder.Property(k => k.Imie).HasMaxLength(50);
+            builder.Property(k => k.Imie).HasMaxLength(50);
+            builder.Property(k => k.Pesel).HasMaxLength(11);
 
         }
     }

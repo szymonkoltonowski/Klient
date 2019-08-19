@@ -6,10 +6,10 @@ namespace Klient.Application.Adresses.Commands.CreateAdres
     {
         public CreateAdresCommandValidator()
         {
-            RuleFor(address => address.Miasto).NotNull();
-            RuleFor(address => address.NrDomu).NotNull();
-            RuleFor(address => address.NrMieszkania).NotNull();
-            RuleFor(address => address.Ulica).NotNull();
+            RuleFor(address => address.Miasto).NotNull().WithMessage("Pole musi być uzupełnione"); ;
+            RuleFor(address => address.NrDomu).NotNull().WithMessage("Pole musi być uzupełnione");
+            RuleFor(address => address.NrMieszkania).NotNull().WithMessage("Pole musi być uzupełnione");
+            RuleFor(address => address.Ulica).NotNull().WithMessage("Pole musi być uzupełnione");
         }
 
     }

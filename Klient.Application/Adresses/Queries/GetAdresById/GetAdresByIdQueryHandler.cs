@@ -1,4 +1,6 @@
-﻿using Klient.DAO;
+﻿using AutoMapper;
+using Klient.DAO;
+using Klient.DTO.Models;
 using Klient.Model.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -9,13 +11,15 @@ using System.Threading.Tasks;
 
 namespace Klient.Application.Adresses.Queries.GetAdresById
 {
-    public class GetAdresByIdQueryHandler : IRequestHandler<GetAdresByIdQuery,AdresEntity>
+    public class GetAdresByIdQueryHandler : IRequestHandler<GetAdresByIdQuery,AdresDTO>
     {
         private readonly DataContext _dataContext;
+        private readonly IMapper _mapper;
 
-        public GetAdresByIdQueryHandler(DataContext dataContext)
+        public GetAdresByIdQueryHandler(DataContext dataContext, IMapper mapper)
         {
             _dataContext = dataContext;
+            _mapper = mapper;
         }
 
         public IEnumerator<AdresEntity> GetEnumerator()
@@ -24,13 +28,13 @@ namespace Klient.Application.Adresses.Queries.GetAdresById
         }
 
    
-        public async Task<AdresEntity> Handle(GetAdresByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AdresDTO> Handle(GetAdresByIdQuery request, CancellationToken cancellationToken)
         {
             var adresEntity = await _dataContext.Adres
                    .Where(adres => adres.Id == request._id)
                    .FirstOrDefaultAsync(cancellationToken);
-
-            return adresEntity;
+            var adresDTO = _mapper.Map<AdresDTO>(adresEntity);
+            return adresDTO;
         }
     }
 }
