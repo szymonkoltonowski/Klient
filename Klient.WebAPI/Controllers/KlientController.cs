@@ -20,14 +20,12 @@ namespace Klient.WebAPI.Controllers
     {
         private readonly IMediator _mediator;
         readonly ILogger _logger;
-        private readonly IMapper _mapper;
 
 
-        public KlientController(IMediator mediator, ILogger logger, IMapper mapper)
+        public KlientController(IMediator mediator, ILogger logger)
         {
             _mediator = mediator;
             _logger = logger;
-            _mapper = mapper;
         }
 
         // GET: api/Klient

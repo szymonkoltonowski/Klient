@@ -11,7 +11,7 @@ namespace Klient.Application.Infrastructure
         {
             CreateMap<KlientEntity, KlientViewModel>()
                 .ForMember(pDTO => pDTO.Miasto, opt => opt.MapFrom(p => p.Adres != null ? p.Adres.Miasto : string.Empty));
-            CreateMap<KlientEntity, KlientDTO>().ReverseMap();
+            CreateMap<KlientEntity, KlientDTO>();
         }
     }
 }

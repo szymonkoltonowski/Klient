@@ -16,8 +16,7 @@ namespace Klient.WebAPI.Controllers
     [ApiController]
     public class AdresController : ControllerBase
 
-        {
-
+    {
         private readonly IMediator _mediator;
         
         public AdresController(IMediator mediator)

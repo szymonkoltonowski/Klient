@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Klient.DAO;
+using Klient.DTO.Models;
 using Klient.Model.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Klient.Application.Klients.Queries.GetKlient
 {
-    public class GetKlienciQueryHandler : IRequestHandler<GetKlienciQuery, IEnumerable<KlientEntity>>
+    public class GetKlienciQueryHandler : IRequestHandler<GetKlienciQuery, IEnumerable<KlientDTO>>
     {
         private readonly DataContext _dataContext;
         private readonly IMapper _mapper;
@@ -21,12 +22,14 @@ namespace Klient.Application.Klients.Queries.GetKlient
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<KlientEntity>> Handle(GetKlienciQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<KlientDTO>> Handle(GetKlienciQuery request, CancellationToken cancellationToken)
         {
 
-            var klientEntityList = await _dataContext.Klient.ToListAsync(cancellationToken);
+            var klientEntityList = await _dataContext.Klient.ToListAsync(cancellationToken) ;
 
-            return klientEntityList;
+            var dupa = _mapper.Map<List<KlientDTO>>(klientEntityList);
+
+            return dupa;
         }
 
 

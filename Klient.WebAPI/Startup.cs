@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
 using Klient.WebAPI.Diagnostics;
 using Autofac;
