@@ -1,0 +1,21 @@
+<p *ngIf="!adress"><em>Loading...</em></p>
+
+<table class='table' *ngIf="adress">
+  <thead>
+    <tr>
+      <th>Miasto</th>
+      <th>Ulica</th>
+      <th>Nr mieszkania</th>
+      <th>Nr domu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let adres of adress">
+      <td>{{ adres.miasto }}</td>
+      <td>{{ adres.ulica }}</td>
+      <td>{{ adres.nrMieszkania }}</td>
+      <td>{{ adres.nrDomu }}</td>
+
+    </tr>
+  </tbody>
+</table>

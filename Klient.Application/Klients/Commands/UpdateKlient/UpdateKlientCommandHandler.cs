@@ -28,7 +28,7 @@ namespace Klient.Application.Klients.Commands.UpdateKlient
             klientEntity.Imie = request.Imie;
             klientEntity.Nazwisko = request.Nazwisko;
             klientEntity.Pesel = request.Pesel;
-            //klientEntity.AdresId = request.AdresId;
+            klientEntity.AdresId = request.AdresId;
                 
             await _dataContext.SaveChangesAsync(cancellationToken);
 

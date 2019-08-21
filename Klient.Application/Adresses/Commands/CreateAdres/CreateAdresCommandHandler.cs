@@ -19,7 +19,6 @@ namespace Klient.Application.Adresses.Commands.CreateAdres
         {
             var adresEntity = new AdresEntity
             {
-                Id = request.Id,
                 Miasto = request.Miasto,
                 Ulica = request.Ulica,
                 NrDomu = request.NrDomu,

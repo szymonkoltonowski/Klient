@@ -46,6 +46,7 @@ namespace Klient.WebAPI.Controllers
 
         // PUT: 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresCommand model)
@@ -65,6 +66,7 @@ namespace Klient.WebAPI.Controllers
 
         // POST: 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateAdres([FromBody] CreateAdresCommand model)

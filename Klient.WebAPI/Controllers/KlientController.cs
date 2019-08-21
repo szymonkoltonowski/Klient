@@ -10,6 +10,7 @@ using Klient.Application.Klients.Commands.CreateKlient;
 using Klient.Application.Klients.Commands.UpdateKlient;
 using Klient.Application.Klients.Commands.DeleteKlient;
 using Klient.DTO.Models;
+using System.Collections.Generic;
 
 namespace Klient.WebAPI.Controllers
 {
@@ -30,7 +31,7 @@ namespace Klient.WebAPI.Controllers
         // GET: api/Klient
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<KlientDTO>> GetKlienci()
+        public async Task<ActionResult<IEnumerable<KlientDTO>>> GetKlienci()
         { 
             var result = await _mediator.Send(new GetKlienciQuery());
 
@@ -43,7 +44,7 @@ namespace Klient.WebAPI.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<KlientDTO>> GetKlient([FromRoute] Guid id)
+        public async Task<ActionResult<IEnumerable<KlientDTO>>> GetKlient([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetKlientByIdQuery(id));
 
@@ -53,6 +54,7 @@ namespace Klient.WebAPI.Controllers
 
         // PUT: api/Klient/5
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateKlient([FromRoute] Guid id, [FromBody] UpdateKlientCommand model)
@@ -73,6 +75,7 @@ namespace Klient.WebAPI.Controllers
 
         // POST: api/Klient
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateKlient([FromBody] CreateKlientCommand model)
@@ -92,6 +95,9 @@ namespace Klient.WebAPI.Controllers
 
             return Ok(result);
         }
+
+        // GET: api/Klient/5/adres
+        //[HttpGet("{id}/adres")]
 
     }
 }

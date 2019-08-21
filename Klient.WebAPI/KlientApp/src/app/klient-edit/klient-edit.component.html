@@ -1,0 +1,8 @@
+<form 
+#editForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="edit()">
+  <input class="form-control mr-sm-2" type="text" name="imie" placeholder="imie" required [(ngModel)]="model.imie">
+  <input class="form-control mr-sm-2" type="text" name="nazwisko" placeholder="nazwisko" required [(ngModel)]="model.nazwisko">
+  <input class="form-control mr-sm-2" type="text" name="pesel" placeholder="pesel" required [(ngModel)]="model.pesel">
+  <input class="form-control mr-sm-2" type="text" name="adresId" placeholder="adresId" [(ngModel)]="model.adresId">
+  <button (click)="refresh()" [disabled]="!editForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Edytuj</button>
+</form>

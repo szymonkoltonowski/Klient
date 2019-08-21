@@ -19,7 +19,6 @@ namespace Klient.Application.Klients.Commands.CreateKlient
         {
             var klientEntity = new KlientEntity
             {
-                Id = request.Id,
                 Pesel = request.Pesel,
                 Imie = request.Imie,
                 Nazwisko = request.Nazwisko,

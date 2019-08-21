@@ -1,0 +1,24 @@
+<p *ngIf="!klients"><em>Loading...</em></p>
+
+<table class='table' *ngIf="klients">
+  <thead>
+    <tr>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+      <th>Pesel</th>
+      <th>Miasto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let klient of klients">
+      <td>{{ klient.imie }}</td>
+      <td>{{ klient.nazwisko }}</td>
+      <td>{{ klient.pesel }}</td>
+      <td>{{ klient.miasto }}</td>
+      <td><button type="button" [routerLink]="['edit', klient.id]">Edit</button> 
+      </td>
+      <td><button type="button" (click)="delete(klient.id)">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
 using Klient.WebAPI.Diagnostics;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -19,6 +18,8 @@ using Klient.Application.Klients.Commands.CreateKlient;
 using Klient.Application.Infrastructure;
 using FluentValidation;
 using Klient.WebAPI.Filters;
+using NSwag.AspNetCore;
+using NSwag;
 
 namespace Klient.WebAPI
 {
@@ -49,7 +50,7 @@ namespace Klient.WebAPI
                 .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateKlientCommandValidator>());
-
+            services.AddCors();
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -59,14 +60,15 @@ namespace Klient.WebAPI
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 });
-            services.AddSwaggerGen(x =>
-            {
-                x.SwaggerDoc("v1", new Info
-                {
-                    Title = "Klient",
-                    Version = "v1"
-                });
-            });
+            /*            services.AddSwaggerGen(x =>
+                        {
+                            x.SwaggerDoc("v1", new Info
+                            {
+                                Title = "Klient",
+                                Version = "v1"
+                            });
+                        });*/
+            services.AddSwaggerDocument();
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
@@ -85,6 +87,7 @@ namespace Klient.WebAPI
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
             if (env.IsDevelopment())
@@ -100,12 +103,17 @@ namespace Klient.WebAPI
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseMiddleware<SerilogMiddleware>();
-            app.UseSwagger();
-            app.UseSwaggerUI(x =>
-            {
-                x.SwaggerEndpoint("/swagger/v1/swagger.json", "Klient App");
-                x.RoutePrefix = string.Empty;
-            });
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
+
+            /*            app.UseSwagger();
+                        app.UseSwaggerUI(x =>
+                        {
+                            x.SwaggerEndpoint("/swagger/v1/swagger.json", "Klient App");
+                            x.RoutePrefix = string.Empty;
+                        });*/
         }
     }
 }
