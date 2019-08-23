@@ -1,3 +1,4 @@
+<app-klient-insert></app-klient-insert>
 <p *ngIf="!klients"><em>Loading...</em></p>
 
 <table class='table' *ngIf="klients">
@@ -15,8 +16,7 @@
       <td>{{ klient.nazwisko }}</td>
       <td>{{ klient.pesel }}</td>
       <td>{{ klient.miasto }}</td>
-      <td><button type="button" [routerLink]="['edit', klient.id]">Edit</button> 
-      </td>
+      <td><button type="button" routerLink="/edit/{{klient.id}}">Edit</button></td>
       <td><button type="button" (click)="delete(klient.id)">Delete</button></td>
 
     </tr>

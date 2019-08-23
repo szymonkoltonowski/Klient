@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { KlientService} from '../app.generated'
+import { KlientService, AdresService, AdresDTO} from '../app.generated'
 
 @Component({
   selector: 'app-klient-insert',
@@ -8,14 +8,17 @@ import { KlientService} from '../app.generated'
 })
 export class KlientInsertComponent implements OnInit {
   model: any = {};
+  adres: AdresDTO[];
 
-  constructor(private klientService : KlientService) { }
+  constructor(private klientService : KlientService, private adresService : AdresService) { }
 
   ngOnInit() {
+    this.getAdres();
   }
   insert() {
     this.klientService.createKlient(this.model).subscribe(next => {
       console.log('Utworzono klienta');
+      
     }, error => {
       console.log(error);
       console.log('Błąd w czasie tworzenia');
@@ -23,6 +26,10 @@ export class KlientInsertComponent implements OnInit {
   }
   refresh(): void {
     window.location.reload();
+}
+getAdres(): void {
+  this.adresService.getAdreses()
+    .subscribe(adres => this.adres = adres);
 }
 
 }

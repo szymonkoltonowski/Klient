@@ -44,7 +44,7 @@ namespace Klient.WebAPI.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<KlientDTO>>> GetKlient([FromRoute] Guid id)
+        public async Task<ActionResult<KlientDTO>> GetKlient([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetKlientByIdQuery(id));
 
@@ -57,18 +57,10 @@ namespace Klient.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateKlient([FromRoute] Guid id, [FromBody] UpdateKlientCommand model)
+        public async Task<IActionResult> UpdateKlient([FromBody] UpdateKlientCommand model)
         {
-            
-            var result = await _mediator.Send(new UpdateKlientCommand
-            {
-                Id = id,
-                Pesel = model.Pesel,
-                Imie = model.Imie,
-                Nazwisko = model.Nazwisko,
-                AdresId = model.AdresId
 
-            });
+            var result = await _mediator.Send(model);
 
             return Ok(result);
         }

@@ -17,8 +17,8 @@ export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 export interface IAdresService {
     getAdreses(): Observable<AdresDTO[]>;
     createAdres(model: CreateAdresCommand): Observable<void>;
-    getAdres(id: string): Observable<AdresDTO[]>;
-    updateAdres(id: string, model: UpdateAdresCommand): Observable<void>;
+    getAdres(id: string): Observable<AdresDTO>;
+    updateAdres(model: UpdateAdresCommand, id: string): Observable<void>;
     delete(id: string): Observable<void>;
 }
 
@@ -121,7 +121,11 @@ export class AdresService implements IAdresService {
             (<any>response).error instanceof Blob ? (<any>response).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
-        if (status === 204) {
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(<any>null);
+            }));
+        } else if (status === 204) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(<any>null);
             }));
@@ -135,7 +139,7 @@ export class AdresService implements IAdresService {
         }
     }
 
-    getAdres(id: string): Observable<AdresDTO[]> {
+    getAdres(id: string): Observable<AdresDTO> {
         let url_ = this.baseUrl + "/api/Adres/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -157,14 +161,14 @@ export class AdresService implements IAdresService {
                 try {
                     return this.processGetAdres(<any>response_);
                 } catch (e) {
-                    return <Observable<AdresDTO[]>><any>_observableThrow(e);
+                    return <Observable<AdresDTO>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<AdresDTO[]>><any>_observableThrow(response_);
+                return <Observable<AdresDTO>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetAdres(response: HttpResponseBase): Observable<AdresDTO[]> {
+    protected processGetAdres(response: HttpResponseBase): Observable<AdresDTO> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -175,11 +179,7 @@ export class AdresService implements IAdresService {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            if (Array.isArray(resultData200)) {
-                result200 = [] as any;
-                for (let item of resultData200)
-                    result200!.push(AdresDTO.fromJS(item));
-            }
+            result200 = AdresDTO.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status === 404) {
@@ -194,10 +194,10 @@ export class AdresService implements IAdresService {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<AdresDTO[]>(<any>null);
+        return _observableOf<AdresDTO>(<any>null);
     }
 
-    updateAdres(id: string, model: UpdateAdresCommand): Observable<void> {
+    updateAdres(model: UpdateAdresCommand, id: string): Observable<void> {
         let url_ = this.baseUrl + "/api/Adres/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -236,7 +236,11 @@ export class AdresService implements IAdresService {
             (<any>response).error instanceof Blob ? (<any>response).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
-        if (status === 204) {
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(<any>null);
+            }));
+        } else if (status === 204) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(<any>null);
             }));
@@ -313,8 +317,8 @@ export class AdresService implements IAdresService {
 export interface IKlientService {
     getKlienci(): Observable<KlientDTO[]>;
     createKlient(model: CreateKlientCommand): Observable<void>;
-    getKlient(id: string): Observable<KlientDTO[]>;
-    updateKlient(id: string, model: UpdateKlientCommand): Observable<void>;
+    getKlient(id: string): Observable<KlientDTO>;
+    updateKlient(model: UpdateKlientCommand, id: string): Observable<void>;
     delete(id: string): Observable<void>;
 }
 
@@ -417,7 +421,11 @@ export class KlientService implements IKlientService {
             (<any>response).error instanceof Blob ? (<any>response).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
-        if (status === 204) {
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(<any>null);
+            }));
+        } else if (status === 204) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(<any>null);
             }));
@@ -431,7 +439,7 @@ export class KlientService implements IKlientService {
         }
     }
 
-    getKlient(id: string): Observable<KlientDTO[]> {
+    getKlient(id: string): Observable<KlientDTO> {
         let url_ = this.baseUrl + "/api/Klient/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -453,14 +461,14 @@ export class KlientService implements IKlientService {
                 try {
                     return this.processGetKlient(<any>response_);
                 } catch (e) {
-                    return <Observable<KlientDTO[]>><any>_observableThrow(e);
+                    return <Observable<KlientDTO>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<KlientDTO[]>><any>_observableThrow(response_);
+                return <Observable<KlientDTO>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetKlient(response: HttpResponseBase): Observable<KlientDTO[]> {
+    protected processGetKlient(response: HttpResponseBase): Observable<KlientDTO> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -471,11 +479,7 @@ export class KlientService implements IKlientService {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            if (Array.isArray(resultData200)) {
-                result200 = [] as any;
-                for (let item of resultData200)
-                    result200!.push(KlientDTO.fromJS(item));
-            }
+            result200 = KlientDTO.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status === 404) {
@@ -490,10 +494,10 @@ export class KlientService implements IKlientService {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<KlientDTO[]>(<any>null);
+        return _observableOf<KlientDTO>(<any>null);
     }
 
-    updateKlient(id: string, model: UpdateKlientCommand): Observable<void> {
+    updateKlient(model: UpdateKlientCommand, id: string): Observable<void> {
         let url_ = this.baseUrl + "/api/Klient/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -532,7 +536,11 @@ export class KlientService implements IKlientService {
             (<any>response).error instanceof Blob ? (<any>response).error : undefined;
 
         let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
-        if (status === 204) {
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(<any>null);
+            }));
+        } else if (status === 204) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             return _observableOf<void>(<any>null);
             }));
@@ -763,7 +771,6 @@ export interface IUpdateAdresCommand {
 }
 
 export class CreateAdresCommand implements ICreateAdresCommand {
-    id!: string;
     miasto?: string | undefined;
     nrMieszkania?: string | undefined;
     nrDomu?: string | undefined;
@@ -780,7 +787,6 @@ export class CreateAdresCommand implements ICreateAdresCommand {
 
     init(data?: any) {
         if (data) {
-            this.id = data["id"];
             this.miasto = data["miasto"];
             this.nrMieszkania = data["nrMieszkania"];
             this.nrDomu = data["nrDomu"];
@@ -797,7 +803,6 @@ export class CreateAdresCommand implements ICreateAdresCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
         data["miasto"] = this.miasto;
         data["nrMieszkania"] = this.nrMieszkania;
         data["nrDomu"] = this.nrDomu;
@@ -807,7 +812,6 @@ export class CreateAdresCommand implements ICreateAdresCommand {
 }
 
 export interface ICreateAdresCommand {
-    id: string;
     miasto?: string | undefined;
     nrMieszkania?: string | undefined;
     nrDomu?: string | undefined;
@@ -819,6 +823,7 @@ export class KlientDTO implements IKlientDTO {
     pesel?: string | undefined;
     imie?: string | undefined;
     nazwisko?: string | undefined;
+    adresId?: string | undefined;
     miasto?: string | undefined;
 
     constructor(data?: IKlientDTO) {
@@ -836,6 +841,7 @@ export class KlientDTO implements IKlientDTO {
             this.pesel = data["pesel"];
             this.imie = data["imie"];
             this.nazwisko = data["nazwisko"];
+            this.adresId = data["adresId"];
             this.miasto = data["miasto"];
         }
     }
@@ -853,6 +859,7 @@ export class KlientDTO implements IKlientDTO {
         data["pesel"] = this.pesel;
         data["imie"] = this.imie;
         data["nazwisko"] = this.nazwisko;
+        data["adresId"] = this.adresId;
         data["miasto"] = this.miasto;
         return data; 
     }
@@ -863,6 +870,7 @@ export interface IKlientDTO {
     pesel?: string | undefined;
     imie?: string | undefined;
     nazwisko?: string | undefined;
+    adresId?: string | undefined;
     miasto?: string | undefined;
 }
 
@@ -919,7 +927,6 @@ export interface IUpdateKlientCommand {
 }
 
 export class CreateKlientCommand implements ICreateKlientCommand {
-    id!: string;
     pesel?: string | undefined;
     imie?: string | undefined;
     nazwisko?: string | undefined;
@@ -936,7 +943,6 @@ export class CreateKlientCommand implements ICreateKlientCommand {
 
     init(data?: any) {
         if (data) {
-            this.id = data["id"];
             this.pesel = data["pesel"];
             this.imie = data["imie"];
             this.nazwisko = data["nazwisko"];
@@ -953,7 +959,6 @@ export class CreateKlientCommand implements ICreateKlientCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
         data["pesel"] = this.pesel;
         data["imie"] = this.imie;
         data["nazwisko"] = this.nazwisko;
@@ -963,7 +968,6 @@ export class CreateKlientCommand implements ICreateKlientCommand {
 }
 
 export interface ICreateKlientCommand {
-    id: string;
     pesel?: string | undefined;
     imie?: string | undefined;
     nazwisko?: string | undefined;

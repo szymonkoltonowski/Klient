@@ -3,7 +3,11 @@
   <input class="form-control mr-sm-2" type="text" name="imie" placeholder="imie" required [(ngModel)]="model.imie">
   <input class="form-control mr-sm-2" type="text" name="nazwisko" placeholder="nazwisko" required [(ngModel)]="model.nazwisko">
   <input class="form-control mr-sm-2" type="text" name="pesel" placeholder="pesel" required [(ngModel)]="model.pesel">
-  <input class="form-control mr-sm-2" type="text" name="adresId" placeholder="adresId" [(ngModel)]="model.adresId">
-  <select></select>
-  <button (click)="refresh()" [disabled]="!insertForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Create</button>
+  <select name="adresId" placeholder="adresId" [(ngModel)]="model.adresId">
+      <option value="" >Brak</option>    
+      <option *ngFor="let adr of adres" [value]="adr.id">
+        {{" Miasto: " + adr.miasto + " Ulica: "  + adr.ulica + " Numer Domu: " + adr.nrDomu + " Numer mieszkania: " + adr.nrMieszkania}}
+      </option>
+  </select>
+  <button  [disabled]="!insertForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Create</button>
 </form>

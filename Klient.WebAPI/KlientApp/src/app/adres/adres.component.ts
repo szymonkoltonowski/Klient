@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {AdresDTO, AdresService} from '../app.generated'
-import { Observable } from 'rxjs';
+import { AdresService, AdresDTO } from '../app.generated';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styles: []
+  selector: 'app-adres',
+  templateUrl: './adres.component.html',
+  styleUrls: ['./adres.component.css']
 })
-
-
-export class HomeComponent implements OnInit{  
+export class AdresComponent implements OnInit {
   public adress: AdresDTO[] = [];
   
   constructor(private adres: AdresService) {}
@@ -19,5 +16,6 @@ export class HomeComponent implements OnInit{
       this.adress = result;
     }, error => console.error(error));
   }
+
 
 }

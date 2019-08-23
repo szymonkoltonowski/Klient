@@ -38,7 +38,7 @@ namespace Klient.WebAPI.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<AdresDTO>>> GetAdres([FromRoute] Guid id)
+        public async Task<ActionResult<AdresDTO>> GetAdres([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetAdresByIdQuery(id));
             return Ok(result);
@@ -49,17 +49,10 @@ namespace Klient.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateAdres([FromRoute] Guid id, [FromBody] UpdateAdresCommand model)
+        public async Task<IActionResult> UpdateAdres([FromBody] UpdateAdresCommand model)
         {
-            var result = await _mediator.Send(new UpdateAdresCommand
-            {
-                Id = id,
-                Miasto = model.Miasto,
-                Ulica = model.Ulica,
-                NrDomu = model.NrDomu,
-                NrMieszkania = model.NrMieszkania
-
-            });
+            var result = await _mediator.Send(model);
+ 
 
             return Ok(result);
         }

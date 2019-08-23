@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {KlientDTO, KlientService} from '../app.generated'
-
+import {KlientDTO, KlientService, AdresDTO, AdresService} from '../app.generated';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-klient-edit',
@@ -9,19 +9,33 @@ import {KlientDTO, KlientService} from '../app.generated'
   styleUrls: ['./klient-edit.component.css']
 })
 export class KlientEditComponent implements OnInit {
-  public klients: KlientDTO[] = [];
+  @Input() model: KlientDTO;
+  adres: AdresDTO[];
+  //public klients: KlientDTO[] = [];
   id: any;
-  constructor(private router: Router, private route: ActivatedRoute, private api: KlientService) { }
-  // editKlient(userId){
-  //   this.route.params.subscribe(params=>{
-  //     this.klients=this.klients.filter(del=>del.id!==userId)    
-  //   })
-  // }
+constructor (private service: KlientService, private route: ActivatedRoute, private adresService: AdresService, private location: Location
+  ) {}
 
 
   ngOnInit() {
+  this.getKlient();
+  this.getAdres();
+  }
+  getKlient(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-
+    this.service.getKlient(this.id)
+      .subscribe(model => this.model = model);
+  }
+  getAdres(): void {
+    this.adresService.getAdreses()
+      .subscribe(adres => this.adres = adres);
+  }
+  goBack(): void {
+     this.location.back();
+   }
+  save(): void {
+    this.service.updateKlient(this.model, this.id)
+      .subscribe(() => this.goBack());
   }
   
 
