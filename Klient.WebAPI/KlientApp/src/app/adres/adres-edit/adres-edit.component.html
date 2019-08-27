@@ -1,1 +1,31 @@
-<p>adres-edit works!</p>
+<div *ngIf="model">
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-3">
+      <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="pi pi-home"></i></span>
+          <input type="text" pInputText placeholder="Miasto" required [(ngModel)]="model.miasto">         
+      </div>
+  </div>
+  
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">ul.</span>
+      <input type="text" pInputText placeholder="Ulica" required [(ngModel)]="model.ulica">         
+  </div>
+  </div>
+          
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"></span>
+      <input type="text" pInputText placeholder="Numer domu" required [(ngModel)]="model.nrDomu">         
+  </div>
+  </div>
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+      <input type="text" pInputText placeholder="Numer mieszkania" [(ngModel)]="model.nrMieszkania">         
+  </div>
+  </div>
+</div>
+<button pButton type="button" label="Zapisz adres" class="ui-button-rounded"(click)="handleClick($event)" ></button>
+</div>

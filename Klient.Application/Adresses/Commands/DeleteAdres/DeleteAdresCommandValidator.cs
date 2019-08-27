@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using System;
 
 namespace Klient.Application.Adresses.Commands.DeleteAdres
 {
@@ -6,7 +7,7 @@ namespace Klient.Application.Adresses.Commands.DeleteAdres
     {
         public DeleteAdresCommandValidator()
         {
-            RuleFor(address => address.Id).NotNull();
+            RuleFor(address => address.Id).NotEqual(Guid.Empty);
         }
     }
 }

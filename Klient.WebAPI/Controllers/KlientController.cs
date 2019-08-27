@@ -55,8 +55,7 @@ namespace Klient.WebAPI.Controllers
         // PUT: api/Klient/5
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
         public async Task<IActionResult> UpdateKlient([FromBody] UpdateKlientCommand model)
         {
 
@@ -68,12 +67,11 @@ namespace Klient.WebAPI.Controllers
         // POST: api/Klient
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateKlient([FromBody] CreateKlientCommand model)
         {
             var result = await _mediator.Send(model);
-            //return NoContent();
+
             return Ok(result);
         }
 
@@ -85,11 +83,11 @@ namespace Klient.WebAPI.Controllers
         {
             var result = await _mediator.Send(new DeleteKlientCommand(id));
 
-            return Ok(result);
+            return NoContent();
+            //return Ok(result);
         }
 
-        // GET: api/Klient/5/adres
-        //[HttpGet("{id}/adres")]
+    
 
     }
 }

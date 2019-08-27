@@ -1,9 +1,14 @@
+<link rel="stylesheet" type="text/css" src="/node_modules/primeicons/primeicons.css" />
+<link rel="stylesheet" type="text/css" src="/node_modules/primeng/resources/themes/nova-light/theme.css" />
+<link rel="stylesheet" type="text/css" src="/node_modules/primeng/resources/primeng.min.css" />
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
-<a routerLink="/klienci">Klienci</a><br>
-<a routerLink="/adresy">Adres</a>
+<button pButton type="button" label="Klienci" class="ui-button-rounded ui-button-success" routerLink="/klienci"></button>
+<button pButton type="button" label="Adresy" class="ui-button-rounded ui-button-warning" routerLink="/adresy"></button>
+
+
 <router-outlet></router-outlet>

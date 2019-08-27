@@ -621,6 +621,11 @@ export class AdresDTO implements IAdresDTO {
     nrDomu?: string | undefined;
     ulica?: string | undefined;
 
+    get pelnyAdres(): string {
+
+        return `${this.miasto ? ' Miasto: ' + this.miasto : ''}${this.ulica ? ' Ulica: ' + this.ulica : ''}${this.nrDomu ? ' Nr domu: ' + this.nrDomu : ''}${this.nrMieszkania ? ' Nr Mieszkania: ' + this.nrMieszkania : ''}`
+       // return 'Miasto:  ' + this.miasto + '  Ulica:  ' + this.ulica + '  Nr domu:  ' + this.nrDomu  +'  Nr Mieszkania:  ' + this.nrMieszkania;
+    }
     constructor(data?: IAdresDTO) {
         if (data) {
             for (var property in data) {

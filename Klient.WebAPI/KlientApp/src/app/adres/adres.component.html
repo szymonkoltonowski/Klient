@@ -1,22 +1,68 @@
-<app-adres-insert></app-adres-insert>
-<p *ngIf="!adress"><em>Loading...</em></p>
+<form [formGroup]="adresform" (ngSubmit)="submit()">
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-3">
+      <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="pi pi-home"></i></span>
+          <input type="text" pInputText placeholder="Miasto *" formControlName="miasto" [(ngModel)]="model.miasto">         
+      </div>
+      <div class="ui-grid-col-8">
+          <p-message severity="error" text="Miasto jest wymagane" *ngIf="!adresform.controls['miasto'].valid&&adresform.controls['miasto'].dirty"></p-message>     
+        </div>
+  </div>
+  
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">ul.</span>
+      <input type="text" pInputText placeholder="Ulica *" formControlName="ulica" [(ngModel)]="model.ulica">         
+    </div>
+    <div class="ui-grid-col-8">
+        <p-message severity="error" text="Ulica jest wymagane" *ngIf="!adresform.controls['ulica'].valid&&adresform.controls['ulica'].dirty" ></p-message>     
+      </div>
+  </div>          
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">nr</span>
+      <input type="text" pInputText placeholder="Numer domu *" formControlName="nrDomu" [(ngModel)]="model.nrDomu">         
+  </div>
+  <div class="ui-grid-col-8">
+      <p-message severity="error" text="Numer domu jest wymagany" *ngIf="!adresform.controls['nrDomu'].valid&&adresform.controls['nrDomu'].dirty"></p-message>     
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-3">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">nr</span>
+      <input type="text" pInputText placeholder="Numer mieszkania" formControlName="nrMieszkania" [(ngModel)]="model.nrMieszkania">   
+  </div>
+  <div class="ui-grid-col-8">
+      <p-message severity="error" text="Numer mieszkania jest wyamgany" *ngIf="!adresform.controls['nrMieszkania'].valid&&adresform.controls['nrMieszkania'].dirty"></p-message>     
+    </div>
+  </div>
 
-<table class='table' *ngIf="adress">
-  <thead>
-    <tr>
-      <th>Miasto</th>
-      <th>Ulica</th>
-      <th>Nr mieszkania</th>
-      <th>Nr domu</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let adres of adress">
-      <td>{{ adres.miasto }}</td>
-      <td>{{ adres.ulica }}</td>
-      <td>{{ adres.nrMieszkania }}</td>
-      <td>{{ adres.nrDomu }}</td>
+  <div class="ui-g-6 ui-md-1">
+      <button pButton type="submit" label="Zapisz" [disabled]="!adresform.valid"></button>
+  </div>
 
-    </tr>
-  </tbody>
-</table>
+</div>
+</form>
+
+<p-table [value]="adress">
+  <ng-template pTemplate="header">
+      <tr>
+        <th>Miasto</th>
+        <th>Ulica</th>
+        <th>Nr mieszkania</th>
+        <th>Nr domu</th>
+        <th><i class="pi pi-info"></i></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-adres>
+      <tr>
+        <td>{{ adres.miasto }}</td>
+        <td>{{ adres.ulica }}</td>
+        <td>{{ adres.nrMieszkania }}</td>
+        <td>{{ adres.nrDomu }}</td>
+        <td><button type="button" routerLink="edit/{{adres.id}}"><i class="pi pi-pencil"></i></button>
+        <button type="button" (click)="delete(adres.id)"><i class="pi pi-times"></i></button></td>
+      </tr>
+  </ng-template>
+</p-table>

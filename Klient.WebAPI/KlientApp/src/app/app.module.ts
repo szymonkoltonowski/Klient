@@ -4,33 +4,43 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KlientService, AdresService } from './app.generated';
-import { HttpClientModule } from '@angular/common/http'; 
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { KlientComponent } from './klient/klient.component';
-import { KlientInsertComponent } from './klient-insert/klient-insert.component';
 import { KlientEditComponent } from './klient-edit/klient-edit.component';
 import { AdresComponent } from './adres/adres.component';
-import { AdresInsertComponent } from './adres/adres-insert/adres-insert.component';
 import { AdresEditComponent } from './adres/adres-edit/adres-edit.component';
+import { InputTextModule } from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TableModule} from 'primeng/table';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     KlientComponent,
-    KlientInsertComponent,
     KlientEditComponent,
     AdresComponent,
-    AdresInsertComponent,
-    AdresEditComponent,
-    
+    AdresEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+    InputTextModule,
+    ButtonModule,
+    DropdownModule,
+    BrowserAnimationsModule,
+    TableModule,
+    ReactiveFormsModule,
+    MessagesModule,
+    MessageModule
+    ],
   providers: [AdresService, KlientService],
   bootstrap: [AppComponent]
 })

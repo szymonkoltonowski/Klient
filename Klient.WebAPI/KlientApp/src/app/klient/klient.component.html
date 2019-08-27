@@ -1,24 +1,69 @@
-<app-klient-insert></app-klient-insert>
-<p *ngIf="!klients"><em>Loading...</em></p>
+<form [formGroup]="userform" (ngSubmit)="insert()">
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-2">
+      <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="pi pi-user-plus"></i></span>
+          <input type="text" pInputText placeholder="Imię *" formControlName="firstname" [(ngModel)]="model.imie">    
+      </div>
+      <div class="ui-grid-col-8">
+          <p-message severity="error" text="Imię jest wymagane" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>     
+        </div>
+  </div>
+  
+  <div class="ui-g-12 ui-md-2">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="pi pi-chevron-circle-right"></i></span>
+      <input type="text" pInputText placeholder="Nazwisko *" formControlName="lastname" [(ngModel)]="model.nazwisko">   
+  </div>
+  <div class="ui-grid-col-8">
+    <p-message severity="error" text="Nazwisko jest wymagane" *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty"></p-message>
+    </div>
+  </div>
+          
+  <div class="ui-g-12 ui-md-2">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="pi pi-chevron-circle-right"></i></span>
+      <input type="text" pInputText placeholder="Pesel *" formControlName="pesel" [(ngModel)]="model.pesel">
+  </div>
+  <div class="ui-grid-col-8">
+      <p-message severity="error" [text]="userform.controls['pesel'].errors['required'] ? 'Pesel jest wymagany' : userform.controls['pesel'].errors['minlength'] ? 'Musi być dluższy niz 6' : userform.controls['pesel'].errors['maxlength'] ? 'Musi być krótszy niz 12' :''"  *ngIf="!userform.controls['pesel'].valid&&userform.controls['pesel'].dirty"></p-message>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <!-- <p-dropdown [options]="adres"  placeholder="Wybierz adres"   [showClear]="true" (onChange)="onChange($event)" optionLabel="pelnyAdres">
+    </p-dropdown>       -->
+    <span class="ui-inputgroup-addon"><i class="pi pi-chevron-circle-right"></i></span>
+    <p-dropdown pInputText placeholder="  Wybierz adres  " [options]="adres" formControlName="adres" [(ngModel)]="model.adresId"></p-dropdown>
+      </div>
+  </div>
+  <div class="ui-grid-col-2"></div>
+  <div class="ui-g-6 ui-md-1">
+      <button pButton type="submit" label="Zapisz" [disabled]="!userform.valid"></button>
+  </div>
+  </div>
 
-<table class='table' *ngIf="klients">
-  <thead>
+</form>
+
+<p-table [value]="klients">
+  <ng-template pTemplate="header">
     <tr>
       <th>Imie</th>
       <th>Nazwisko</th>
       <th>Pesel</th>
       <th>Miasto</th>
+      <th><i class="pi pi-info"></i></th>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let klient of klients">
-      <td>{{ klient.imie }}</td>
-      <td>{{ klient.nazwisko }}</td>
-      <td>{{ klient.pesel }}</td>
-      <td>{{ klient.miasto }}</td>
-      <td><button type="button" routerLink="/edit/{{klient.id}}">Edit</button></td>
-      <td><button type="button" (click)="delete(klient.id)">Delete</button></td>
+  </ng-template>
+  <ng-template pTemplate="body" let-klient>
+      <tr>
+        <td>{{ klient.imie }}</td>
+        <td>{{ klient.nazwisko }}</td>
+        <td>{{ klient.pesel }}</td>
+        <td>{{ klient.miasto }}</td>
+        <td><button type="button" routerLink="edit/{{klient.id}}"><i class="pi pi-pencil"></i></button>
+        <button type="button" (click)="delete(klient.id)"><i class="pi pi-times"></i></button></td>
 
-    </tr>
-  </tbody>
-</table>
+      </tr>
+  </ng-template>
+</p-table>
