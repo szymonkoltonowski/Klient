@@ -37,6 +37,7 @@ export class AdresComponent implements OnInit {
     this.adres.delete(userId).subscribe(d => {
       this.adress = this.adress.filter(del => del.id !== userId);
     });
+    this.messageService.add({severity: 'info', summary: 'Sukces', detail: 'Adres został usunięty'});
   }
   edit(userId: string) {
     this.router.navigateByUrl(['/edit', userId]);
@@ -50,6 +51,7 @@ export class AdresComponent implements OnInit {
     this.adres.createAdres(this.model).subscribe(next => {
       console.log('Utworzono adres');
       this.getAdreses();
+      this.messageService.add({severity: 'success', summary: 'Sukces', detail: 'Adres został utworzony'});
       }, error => {
       console.log(error);
       console.log('Błąd w czasie tworzenia');

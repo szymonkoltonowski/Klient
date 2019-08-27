@@ -1,3 +1,5 @@
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+
 <form [formGroup]="userform" (ngSubmit)="insert()">
 <div class="ui-g ui-fluid">
   <div class="ui-g-12 ui-md-2">
@@ -63,7 +65,6 @@
         <td>{{ klient.miasto }}</td>
         <td><button type="button" routerLink="edit/{{klient.id}}"><i class="pi pi-pencil"></i></button>
         <button type="button" (click)="delete(klient.id)"><i class="pi pi-times"></i></button></td>
-
       </tr>
   </ng-template>
 </p-table>
