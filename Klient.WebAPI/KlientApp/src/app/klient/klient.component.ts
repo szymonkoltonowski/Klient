@@ -18,7 +18,8 @@ export class KlientComponent implements OnInit {
   adres: SelectItem[];
   userform: FormGroup;
 
-  constructor(private klient: KlientService, private adresService: AdresService, private fb: FormBuilder) { }
+  constructor(private klient: KlientService, private adresService: AdresService, private fb: FormBuilder,
+              private messageService: MessageService) { }
 
   ngOnInit() {
     this.userform = this.fb.group({
@@ -38,6 +39,7 @@ export class KlientComponent implements OnInit {
     this.klient.delete(userId).subscribe(() => {
       this.klients = this.klients.filter(del => del.id !== userId);
     });
+    this.messageService.add({severity: 'info', summary: 'Sukces', detail: 'Klient został usunięty'});
   }
   edit(userId: string) {
     this.router.navigateByUrl(['/edit', userId]);
@@ -50,7 +52,9 @@ export class KlientComponent implements OnInit {
     this.klient.createKlient(this.model).subscribe(() => {
       console.log('Utworzono klienta');
       this.getKlienci();
-      }, error => {
+      this.messageService.add({severity: 'success', summary: 'Sukces', detail: 'Klient został utworzony'});
+      }
+      , error => {
       console.log(error);
       console.log('Błąd w czasie tworzenia');
     });

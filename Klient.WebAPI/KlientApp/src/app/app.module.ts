@@ -17,6 +17,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import {MessageModule} from 'primeng/message';
     TableModule,
     ReactiveFormsModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    ToastModule
     ],
   providers: [AdresService, KlientService],
   bootstrap: [AppComponent]
